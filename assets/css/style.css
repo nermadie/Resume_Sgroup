@@ -1,0 +1,137 @@
+* {
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 300;
+  font-style: normal;
+}
+header {
+  padding: 40px 50px;
+}
+main {
+  padding: 40px 50px;
+}
+.logo__space {
+  display: inline-block;
+}
+.logo {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  border: 2px solid black;
+  border-radius: 10%;
+  align-items: center;
+  justify-content: center;
+  background-color: #000;
+}
+.fa-solid.fa-j {
+  color: white;
+}
+.brand {
+  margin-left: 20px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+}
+.icon {
+  display: inline;
+  font-size: 2.4rem;
+}
+.icon .icon__space {
+  display: flex;
+  float: right;
+  margin: 0 10px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: white;
+}
+.icon .fa-brands {
+  display: inline-block;
+  color: #ea6766;
+  float: center;
+  overflow: hidden;
+}
+/* MAIN */
+/* SECTION 1 */
+.section1 {
+  display: flex;
+}
+.image {
+  display: flex;
+  float: left;
+  height: 70vh;
+}
+.greeting {
+  display: block;
+  padding-left: 10vw;
+}
+.greeting > span {
+  display: block;
+  margin: 40px 0px;
+  font-weight: 600;
+}
+.greeting > h1 {
+  display: block;
+  font-size: 4rem;
+  font-weight: 600;
+}
+.detail {
+  display: flex;
+}
+.detail > div {
+  margin: 30px 30px 30px 0px;
+}
+.top {
+  color: #ea6766;
+  font-size: 3rem;
+  font-weight: 800;
+}
+.bot {
+  font-size: 1.2rem;
+}
+/* SECTION 2 */
+.section2 {
+  margin: 20px 20px 20px 0px;
+}
+.section2 > a {
+  display: block;
+  position: relative;
+  text-decoration: none;
+  margin: 20px 20px 20px 0px;
+}
+.section2 > a:after {
+  content: "";
+  position: relative;
+  background-color: #ea6766;
+  height: 3px;
+  width: 100%;
+  left: 0;
+  bottom: -10px;
+  transition: 0.3s;
+}
+.section2 > a:hover:after {
+  width: 100%;
+}
+.section2 > p {
+  display: block;
+  margin: 20px 20px 20px 0px;
+}
+.section2 > input {
+  display: block;
+  height: 40px;
+  width: 200px;
+  margin: 0 auto;
+  border: 1.5px solid #ea6766;
+  border-radius: 20px;
+  background-color: white;
+  color: #ea6766;
+  font-weight: 700;
+}
