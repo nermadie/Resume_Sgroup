@@ -75,7 +75,7 @@ main {
 }
 .greeting > span {
   display: block;
-  margin: 40px 0px;
+  margin: 30px 0px;
   font-weight: 600;
 }
 .greeting > h1 {
@@ -84,10 +84,13 @@ main {
   font-weight: 600;
 }
 .detail {
-  display: flex;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  margin: auto;
 }
 .detail > div {
-  margin: 30px 30px 30px 0px;
+  margin-top: 2rem;
 }
 .top {
   color: #ea6766;
@@ -101,37 +104,33 @@ main {
 .section2 {
   margin: 20px 20px 20px 0px;
 }
-.section2 > a {
-  display: block;
-  position: relative;
-  text-decoration: none;
-  margin: 20px 20px 20px 0px;
-}
-.section2 > a:after {
-  content: "";
-  position: relative;
-  background-color: #ea6766;
-  height: 3px;
-  width: 100%;
-  left: 0;
-  bottom: -10px;
-  transition: 0.3s;
-}
-.section2 > a:hover:after {
-  width: 100%;
-}
-.section2 > p {
+.text {
   display: block;
   margin: 20px 20px 20px 0px;
 }
-.section2 > input {
-  display: block;
-  height: 40px;
-  width: 200px;
-  margin: 0 auto;
-  border: 1.5px solid #ea6766;
-  border-radius: 20px;
-  background-color: white;
-  color: #ea6766;
+.text.text--underline {
   font-weight: 700;
+  text-decoration: underline;
+  -webkit-text-decoration-color: #ea6766;
+  text-decoration-color: #ea6766;
+  text-decoration-thickness: 2px;
+}
+.link {
+  /* work with a tag */
+  text-align: center;
+  margin-top: 50px;
+}
+.link > a {
+  text-align: center;
+  padding: 1rem 3rem;
+  border-radius: 40px;
+  color: #ea6766;
+  background-color: #fff;
+  border: 2px solid #ea6766;
+  text-decoration: none;
+}
+.link > a:hover {
+  background-color: #ea6766;
+  color: white;
+  transition: 0.3s;
 }
