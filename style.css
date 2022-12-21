@@ -1,0 +1,92 @@
+/* font-size: 100% = 16px*/
+/* 1em = 1 rem = 16px*/
+* {
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  height: 100vh;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wrapper {
+  padding: 50px 50px;
+  background-color: #fff;
+  width: 1200px;
+  height: 900px;
+  display: grid;
+  gap: 20px;
+  grid-template-areas:
+    "a b c c"
+    "a d e f"
+    "g d h h";
+  grid-template-rows: 1fr 1fr 1fr;
+}
+.img_a {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  overflow: hidden;
+  grid-area: a;
+}
+.img_b {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  overflow: hidden;
+  grid-area: b;
+}
+.img_c {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  overflow: hidden;
+  grid-area: c;
+}
+.img_d {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  overflow: hidden;
+  grid-area: d;
+}
+.img_e {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  overflow: hidden;
+  grid-area: e;
+}
+.img_f {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  overflow: hidden;
+  grid-area: f;
+}
+.img_g {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  overflow: hidden;
+  grid-area: g;
+}
+.img_h {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  overflow: hidden;
+  grid-area: h;
+}
