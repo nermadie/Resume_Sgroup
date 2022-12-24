@@ -16,6 +16,7 @@ header {
 main {
   padding: 40px 50px;
 }
+/* HEADER */
 .logo__space {
   display: inline-block;
 }
@@ -48,8 +49,6 @@ main {
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  align-items: center;
-  justify-content: center;
   overflow: hidden;
   background-color: white;
 }
