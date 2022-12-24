@@ -1,0 +1,93 @@
+:root {
+  --theme-blue: #5580ff;
+  --theme-orange: #ff8a73;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 300;
+  font-style: normal;
+}
+.header--wrapper {
+  height: 12rem;
+  padding: 0 40px;
+  background-color: #000;
+  display: flex;
+  flex: space-between;
+  align-items: center;
+}
+.logo--wrapper a img {
+  width: 104px;
+  height: auto;
+  object-fit: cover;
+}
+.navbar--wrapper {
+  margin-left: auto;
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+.navbar--wrapper a {
+  text-decoration: none;
+  padding: 0 24px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.item_text {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #fff;
+}
+.fa-cart-shopping {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  color: white;
+  font-size: 2rem;
+  align-items: center;
+  justify-content: center;
+  margin-left: 1rem;
+  /* position: relative; */
+}
+.fa-cart-shopping::after {
+  content: "0";
+  position: absolute;
+  background-color: var(--theme-orange);
+  width: 16px;
+  height: 16px;
+  font-size: 12px;
+  font-weight: 300;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+.fa-magnifying-glass {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  color: white;
+  font-size: 2rem;
+  align-items: center;
+  justify-content: center;
+  margin-left: 1rem;
+}
+.fa-bars {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  color: white;
+  font-size: 2rem;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--theme-blue);
+  border-radius: 4px;
+  margin-left: 1rem;
+}
