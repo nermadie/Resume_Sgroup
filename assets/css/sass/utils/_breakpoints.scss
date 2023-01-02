@@ -1,0 +1,11 @@
+@use "functions" as func;
+$breakpoints-up: (
+  "small": func.rem(480),
+  "medium": func.rem(1024),
+  "large": func.rem(1200),
+);
+@mixin breakpoint($size) {
+  @media (min-width: map-get($breakpoints-up, $size)) {
+    @content;
+  }
+}

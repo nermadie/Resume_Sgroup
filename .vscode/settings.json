@@ -1,0 +1,14 @@
+{
+  "liveSassCompile.settings.formats": [
+    {
+      "format": "expanded",
+      "extensionName": ".css",
+      "savePath": "./assets/css",
+      "savePathReplacementPairs": null
+    }
+  ],
+  "editor.wordWrapColumn": 120,
+  "editor.wordWrap": "on",
+  "prettier.bracketSameLine": true,
+  "prettier.printWidth": 120
+}

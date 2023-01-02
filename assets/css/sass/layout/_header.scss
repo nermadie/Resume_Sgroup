@@ -1,0 +1,245 @@
+@use "../utils" as u;
+@use "../global/colors" as color;
+.header__wrapper {
+  height: u.rem(120);
+  padding: 0 u.rem(40);
+  background-color: color.$black-navbar;
+  @include u.flexAlignJustify(center, space-between);
+  .logo__wrapper {
+    width: u.rem(104);
+    height: auto;
+    object-fit: cover;
+    a {
+      @include u.flexAlignJustify(center);
+      img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+      }
+    }
+  }
+  .navbar__wrapper {
+    margin-left: auto;
+    @include u.flexAlignJustify(center);
+    height: 100%;
+    position: relative;
+    .nav {
+      &__item {
+        padding: 0 u.rem(23);
+        height: 100%;
+        position: relative;
+        a {
+          height: 100%;
+          @include u.flexAlignJustify(center);
+          .item__text {
+            font-family: u.$font-UI;
+            font-size: u.rem(14);
+            font-weight: 500;
+            color: color.$white-navbar;
+            letter-spacing: u.rem(1.19);
+            position: relative;
+            &::before {
+              content: "";
+              position: absolute;
+              width: u.rem(6);
+              height: u.rem(6);
+              background-color: transparent;
+              border-radius: 50%;
+              top: 50%;
+              left: -0.8rem;
+              transform: translateY(-50%);
+              transition: all 0.3s ease;
+            }
+          }
+        }
+        .dropdown__list {
+          position: absolute;
+          z-index: 2;
+          width: u.rem(260);
+          background-color: color.$white-navbar;
+          padding: u.rem(24) 0;
+          top: u.rem(120);
+          border-radius: u.rem(10);
+          box-shadow: 0 0 1rem 0.01rem color.$light-blue-shadow-navbar;
+          opacity: 0;
+          visibility: hidden;
+          transition: all 0.2s 0.2s ease;
+          .dropdown__item {
+            position: relative;
+            height: u.rem(40);
+            width: 100%;
+            padding: 0 u.rem(33);
+            @include u.flexAlignJustify(center, space-between);
+            span {
+              font-weight: 300;
+              color: color.$gray-navbar;
+              transition: all 0.2s ease;
+              position: relative;
+              &::before {
+                content: "";
+                position: absolute;
+                width: u.rem(6);
+                height: u.rem(6);
+                background-color: color.$blue;
+                opacity: 0;
+                visibility: hidden;
+                border-radius: 50%;
+                top: 50%;
+                transform: translateY(-50%);
+              }
+            }
+            .fa-angle-right,
+            .fa-angle-left {
+              color: color.$blue-navbar;
+            }
+          }
+          .sublist {
+            position: relative;
+            .sublistbox {
+              top: -15%;
+              position: absolute;
+              z-index: 3;
+              width: u.rem(260);
+              background-color: color.$white-navbar;
+              padding: u.rem(24) 0;
+              border-radius: u.rem(10);
+              box-shadow: 0 0 1rem 0.01rem color.$light-blue-shadow-navbar;
+              opacity: 0;
+              visibility: hidden;
+              transition: all 0.2s 0.2s ease;
+            }
+            &:hover {
+              .sublistbox {
+                visibility: visible;
+                opacity: 1;
+              }
+            }
+          }
+          &.ddlist--bigtab {
+            @include u.flexAlignJustify(center, space-around);
+            width: 100vw;
+            right: calc(100% - 331px);
+            border-radius: 0;
+          }
+        }
+        &:first-child {
+          .item__text {
+            &::before {
+              background-color: color.$blue;
+            }
+          }
+          .dropdown__item:nth-child(10) {
+            span {
+              transform: translateX(1rem);
+              &::before {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(-50%);
+              }
+            }
+          }
+        }
+        &:hover {
+          .item__text::before {
+            background-color: color.$blue;
+            transform: translateY(-50%);
+          }
+          .dropdown__list {
+            visibility: visible;
+            opacity: 1;
+          }
+        }
+      }
+      &__icon {
+        @include u.flexAlignJustify(center, center);
+        width: u.rem(40);
+        height: u.rem(40);
+        color: color.$white-navbar;
+        font-size: 1.3rem;
+        position: relative;
+        margin-left: 1rem;
+        .fa-cart-shopping {
+          position: relative;
+          &::after {
+            content: "0";
+            position: absolute;
+            background-color: color.$rose;
+            width: 1rem;
+            height: 1rem;
+            font-size: u.rem(10);
+            font-weight: 300;
+            @include u.flexAlignJustify(center, center);
+            border-radius: 50%;
+            right: calc(-1 * 1rem);
+            top: 0;
+            transform: translate(-50%, -50%);
+          }
+        }
+        &:last-child {
+          background-color: color.$blue;
+          border-radius: u.rem(4);
+        }
+      }
+    }
+  }
+}
+@for $i from 1 through 5 {
+  .nav__item:nth-child(#{$i}) {
+    @if $i < 4 {
+      .dropdown__list {
+        left: u.rem(calc(-1 * 20));
+        .dropdown__item {
+          span {
+            &::before {
+              left: u.rem(calc(-1 * 16));
+              transition: all 0.2s ease;
+            }
+          }
+          &:hover {
+            span {
+              transform: translateX(1rem);
+              &::before {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(-50%);
+              }
+            }
+          }
+        }
+        .sublist {
+          .sublistbox {
+            left: 95%;
+          }
+        }
+      }
+    } @else {
+      .dropdown__list {
+        right: u.rem(calc(-1 * 10));
+        .dropdown__item {
+          span {
+            margin-left: auto;
+            &::before {
+              right: u.rem(calc(-1 * 16));
+              transition: all 0.2s ease;
+            }
+          }
+          &:hover {
+            span {
+              transform: translateX(calc(-1 * 1rem));
+              &::before {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(-50%);
+              }
+            }
+          }
+        }
+        .sublist {
+          .sublistbox {
+            right: 95%;
+          }
+        }
+      }
+    }
+  }
+}
