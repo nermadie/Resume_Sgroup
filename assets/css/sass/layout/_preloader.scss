@@ -1,0 +1,74 @@
+@use "../global/colors" as color;
+@use "../utils" as u;
+.preloader__wrapper {
+  position: fixed;
+  z-index: 4;
+  width: 100vw;
+  height: 100vh;
+  background-color: color.$white-preloader;
+  @include u.flexAlignJustify(center, center);
+  .squarebox {
+    width: u.rem(64);
+    height: u.rem(64);
+    @include u.flexAlignJustify(center, center);
+    position: relative;
+    transform: translate(-50%, -50%);
+    .line {
+      position: absolute;
+      top: 100%;
+      left: 100%;
+      .dotinsquare {
+        position: absolute;
+        width: 4rem;
+        height: 4rem;
+        &::before {
+          content: "";
+          position: absolute;
+          transform: translate(-50%, -50%);
+          width: u.rem(18);
+          height: u.rem(18);
+          border-radius: 50%;
+          background-color: color.$rose-preloader;
+        }
+      }
+    }
+  }
+}
+.line2 .dotinsquare:nth-child(1)::before {
+  left: 50%;
+}
+.line2 .dotinsquare:nth-child(2)::before {
+  top: 50%;
+}
+.line3 .dotinsquare:nth-child(1)::before {
+  left: 100%;
+}
+.line3 .dotinsquare:nth-child(2)::before {
+  left: 50%;
+  top: 50%;
+}
+.line3 .dotinsquare:nth-child(3)::before {
+  top: 100%;
+}
+.line4 .dotinsquare:nth-child(1)::before {
+  top: 50%;
+  left: 100%;
+}
+.line4 .dotinsquare:nth-child(2)::before {
+  top: 100%;
+  left: 50%;
+}
+.line5 .dotinsquare::before {
+  top: 100%;
+  left: 100%;
+}
+@for $i from 1 through 5 {
+  .line#{$i} .dotinsquare::before {
+    animation: preloaderAnimation 1s linear calc(($i - 1) * 0.25s) infinite;
+  }
+}
+@keyframes preloaderAnimation {
+  50% {
+    opacity: 0.2;
+  }
+}

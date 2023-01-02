@@ -22,6 +22,31 @@
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
   <body>
+    <!-- PRELOADER -->
+    <div id="preloader" class="preloader__wrapper">
+      <div class="squarebox">
+        <div class="line line1">
+          <div class="dotinsquare"></div>
+        </div>
+        <div class="line line2">
+          <div class="dotinsquare"></div>
+          <div class="dotinsquare"></div>
+        </div>
+        <div class="line line3">
+          <div class="dotinsquare"></div>
+          <div class="dotinsquare"></div>
+          <div class="dotinsquare"></div>
+        </div>
+        <div class="line line4">
+          <div class="dotinsquare"></div>
+          <div class="dotinsquare"></div>
+        </div>
+        <div class="line line5">
+          <div class="dotinsquare"></div>
+        </div>
+      </div>
+    </div>
+    <!--  -->
     <header>
       <div class="header__wrapper">
         <div class="logo__wrapper">
@@ -174,39 +199,77 @@
             <ul class="dropdown__list ddlist--bigtab">
               <div class="presentation__col dropdown__col">
                 <span class="col__title">PRESENTATION</span>
-                <a href="#" class="dropdown__item"><span>My Account</span></a>
-                <a href="#" class="dropdown__item"><span>Cart</span></a>
-                <a href="#" class="dropdown__item"><span>Checkout</span></a>
+                <a href="#" class="dropdown__item"><span>Parallax Section</span></a>
+                <a href="#" class="dropdown__item"><span>Single Image</span></a>
+                <a href="#" class="dropdown__item"><span>Product Showcase</span></a>
+                <a href="#" class="dropdown__item"><span>Floating Images</span></a>
+                <a href="#" class="dropdown__item"><span>Team</span></a>
+                <a href="#" class="dropdown__item"><span>Triple Frame Highlight</span></a>
+                <a href="#" class="dropdown__item"><span>Video Button</span></a>
+                <a href="#" class="dropdown__item"><span>Split Slider</span></a>
               </div>
               <div class="classic__col dropdown__col">
                 <span class="col__title">CLASSIC</span>
-                <a href="#" class="dropdown__item"><span>My Account</span></a>
-                <a href="#" class="dropdown__item"><span>Cart</span></a>
-                <a href="#" class="dropdown__item"><span>Checkout</span></a>
+                <a href="#" class="dropdown__item"><span>Accordions</span></a>
+                <a href="#" class="dropdown__item"><span>Tabs</span></a>
+                <a href="#" class="dropdown__item"><span>Clients</span></a>
+                <a href="#" class="dropdown__item"><span>Buttons</span></a>
+                <a href="#" class="dropdown__item"><span>Icon With Text</span></a>
+                <a href="#" class="dropdown__item"><span>Icon List Item</span></a>
+                <a href="#" class="dropdown__item"><span>Progress Bar</span></a>
+                <a href="#" class="dropdown__item"><span>Contact Form</span></a>
               </div>
               <div class="typography__col dropdown__col">
                 <span class="col__title">TYPOGRAPHY</span>
-                <a href="#" class="dropdown__item"><span>My Account</span></a>
-                <a href="#" class="dropdown__item"><span>Cart</span></a>
-                <a href="#" class="dropdown__item"><span>Checkout</span></a>
+                <a href="#" class="dropdown__item"><span>Blockquote</span></a>
+                <a href="#" class="dropdown__item"><span>Columns</span></a>
+                <a href="#" class="dropdown__item"><span>Headings</span></a>
+                <a href="#" class="dropdown__item"><span>Custom Font</span></a>
+                <a href="#" class="dropdown__item"><span>Dropcaps & Highlights</span></a>
+                <a href="#" class="dropdown__item"><span>Section Title</span></a>
+                <a href="#" class="dropdown__item"><span>Separators</span></a>
+                <a href="#" class="dropdown__item"><span>Testmonials</span></a>
               </div>
               <div class="infographic__col dropdown__col">
                 <span class="col__title">INFOGRAPHIC</span>
-                <a href="#" class="dropdown__item"><span>My Account</span></a>
-                <a href="#" class="dropdown__item"><span>Cart</span></a>
-                <a href="#" class="dropdown__item"><span>Checkout</span></a>
+                <a href="#" class="dropdown__item"><span>Comparison Pricing</span></a>
+                <a href="#" class="dropdown__item"><span>Pie Chart</span></a>
+                <a href="#" class="dropdown__item"><span>Pricing Tables</span></a>
+                <a href="#" class="dropdown__item"><span>Google Maps</span></a>
+                <a href="#" class="dropdown__item"><span>Countdown</span></a>
+                <a href="#" class="dropdown__item"><span>Counters</span></a>
+                <a href="#" class="dropdown__item"><span>Portfolio List</span></a>
+                <a href="#" class="dropdown__item"><span>Blog List</span></a>
+                <a href="#" class="dropdown__item"><span>Shop List</span></a>
               </div>
             </ul>
           </div>
-          <a href="#" class="nav__icon">
-            <i class="fa-solid fa-cart-shopping"></i>
-          </a>
-          <a href="#" class="nav__icon">
-            <i class="fa-solid fa-magnifying-glass"></i>
-          </a>
-          <a href="#" class="nav__icon">
-            <i class="fa-solid fa-bars"></i>
-          </a>
+          <div class="nav__icon shopping__cart">
+            <a href="#" class="icon__wrapper">
+              <i class="fa-solid fa-cart-shopping"></i>
+            </a>
+            <div class="cart__detail">
+              <span>No products in the cart.</span>
+            </div>
+          </div>
+          <div class="nav__icon search">
+            <a href="#" class="icon__wrapper">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </a>
+            <div class="search__bar">
+              <i class="fa-solid fa-magnifying-glass fa-flip-horizontal"></i>
+              <input type="text" placeholder="TYPE YOUR SEARCH..." />
+              <a href="#" class="xmark__wrapper">
+                <i class="fa-solid fa-xmark"></i>
+              </a>
+            </div>
+          </div>
+          <div class="nav__icon menu">
+            <a href="#" class="icon__wrapper">
+              <i class="fa-solid fa-bars"></i>
+            </a>
+            <div class="menu__detail"></div>
+          </div>
         </div>
       </div>
     </header>
@@ -216,5 +279,6 @@
         <div class="shapedividers"></div>
       </section>
     </main>
+    <script src="./assets/js/index.js"></script>
   </body>
 </html>
