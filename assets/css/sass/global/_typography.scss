@@ -30,3 +30,14 @@ a:active {
   text-decoration: none;
   cursor: pointer;
 }
+
+::-moz-selection {
+  /* Code for Firefox */
+  color: color.$white;
+  background: color.$rose;
+}
+
+::selection {
+  color: color.$white;
+  background: color.$rose;
+}

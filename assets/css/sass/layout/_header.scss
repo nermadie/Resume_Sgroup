@@ -54,7 +54,7 @@
         }
         .dropdown__list {
           position: absolute;
-          z-index: 2;
+          z-index: 4;
           width: u.rem(260);
           background-color: color.$white-navbar;
           padding: u.rem(24) 0;
@@ -98,7 +98,7 @@
             .sublistbox {
               top: -15%;
               position: absolute;
-              z-index: 3;
+              z-index: 5;
               width: u.rem(260);
               background-color: color.$white-navbar;
               padding: u.rem(24) 0;
@@ -214,6 +214,8 @@
           position: relative;
           .cart__detail {
             position: absolute;
+            z-index: 4;
+            box-shadow: 0 0 1rem 0.01rem color.$light-blue-shadow-navbar;
             background-color: color.$white-navbar;
             width: u.rem(400);
             height: u.rem(88);
@@ -369,3 +371,6 @@
     }
   }
 }
+//Z-INDEX
+//list: 4
+//sublist: 5

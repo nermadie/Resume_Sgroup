@@ -2,21 +2,20 @@
 @use "../utils" as u;
 .preloader__wrapper {
   position: fixed;
-  z-index: 4;
+  z-index: 99;
   width: 100vw;
   height: 100vh;
   background-color: color.$white-preloader;
   @include u.flexAlignJustify(center, center);
+  transition: all 0.3s ease;
   .squarebox {
+    transform: translate(-50%, -50%);
     width: u.rem(64);
     height: u.rem(64);
     @include u.flexAlignJustify(center, center);
     position: relative;
-    transform: translate(-50%, -50%);
     .line {
       position: absolute;
-      top: 100%;
-      left: 100%;
       .dotinsquare {
         position: absolute;
         width: 4rem;
@@ -72,3 +71,5 @@
     opacity: 0.2;
   }
 }
+//Z-INDEX
+//preloader: 99

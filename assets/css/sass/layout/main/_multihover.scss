@@ -1,0 +1,131 @@
+@use "../../global/colors" as color;
+@use "../../utils" as u;
+.multihover__wrapper {
+  margin-top: 2rem;
+  display: grid;
+  height: 54vw;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  .box__wrapper {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    @include u.flexAlignJustify(center, center);
+    position: relative;
+    overflow: hidden;
+    .background {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      z-index: 1;
+      transition: all 0.5s ease;
+    }
+    &:hover {
+      .background {
+        transform: scale(1.1);
+      }
+      .blurmask {
+        opacity: 0.7;
+        visibility: visible;
+      }
+      .top__anchor {
+        opacity: 1;
+        visibility: visible;
+      }
+      .bot__anchor {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+  .anchor1__wrapper {
+    .background {
+      background: url("https://foton.qodeinteractive.com/wp-content/uploads/2018/06/portfolio-featured-img-1-600x488.jpg")
+        no-repeat center center / cover;
+    }
+  }
+  .anchor2__wrapper {
+    .background {
+      background: url("https://foton.qodeinteractive.com/wp-content/uploads/2018/06/portfolio-featured-img-2.jpg")
+        no-repeat center center / cover;
+    }
+  }
+  .anchor3__wrapper {
+    .background {
+      background: url("https://foton.qodeinteractive.com/wp-content/uploads/2018/06/portfolio-featured-img-3.jpg")
+        no-repeat center center / cover;
+    }
+  }
+  .anchor4__wrapper {
+    .background {
+      background: url("https://foton.qodeinteractive.com/wp-content/uploads/2018/06/portfolio-featured-img-4.jpg")
+        no-repeat center center / cover;
+    }
+  }
+  .anchor5__wrapper {
+    .background {
+      background: url("https://foton.qodeinteractive.com/wp-content/uploads/2018/06/portfolio-featured-img-5.jpg")
+        no-repeat center center / cover;
+    }
+  }
+  .anchor6__wrapper {
+    .background {
+      background: url("https://foton.qodeinteractive.com/wp-content/uploads/2018/06/portfolio-featured-img-6.jpg")
+        no-repeat center center / cover;
+    }
+  }
+
+  .blurmask {
+    width: 100%;
+    height: 100%;
+    flex-wrap: wrap;
+    background-color: color.$black-multihover;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s ease;
+    position: absolute;
+    z-index: 2;
+  }
+  .top__anchor {
+    opacity: 0;
+    visibility: hidden;
+    position: relative;
+    z-index: 4;
+    display: block;
+    width: 100%;
+    a {
+      font-size: u.rem(11);
+      letter-spacing: u.rem(1.375);
+      color: color.$gray-multihover;
+      transition: all 0.3s ease;
+      &:hover {
+        color: color.$rose-multihover;
+      }
+    }
+  }
+  .bot__anchor {
+    opacity: 0;
+    visibility: hidden;
+    position: relative;
+    z-index: 4;
+    display: block;
+    width: 100%;
+    a {
+      font-size: u.rem(22);
+      font-weight: 500;
+      color: color.$white-multihover;
+      transition: all 0.3s ease;
+      &:hover {
+        color: color.$rose-multihover;
+      }
+    }
+  }
+  .navigate {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 3;
+    // opacity: 0;
+    // visibility: hidden;
+  }
+}

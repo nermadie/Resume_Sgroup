@@ -1,0 +1,30 @@
+@use "../../utils" as u;
+@use "../../global/colors" as color;
+.videoanchor__wrapper {
+  .video__anchor {
+    @include u.flexAlignJustify(center, center);
+    position: relative;
+    span {
+      img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+}
+.video__view {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  background-color: color.$purple-video;
+  position: absolute;
+  opacity: 0.8;
+  z-index: 98;
+  .video__wrapper {
+    width: 100%;
+    height: 100%;
+    @include u.flexAlignJustify(center, center);
+  }
+}
