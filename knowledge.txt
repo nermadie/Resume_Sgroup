@@ -1,0 +1,1 @@
+filter: drop-shadow để làm box-shadow cho shape phức tạp

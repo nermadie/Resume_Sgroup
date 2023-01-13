@@ -1,0 +1,238 @@
+@use "../../global/colors" as color;
+@use "../../utils" as u;
+.lazytop__wrapper {
+  padding-top: u.rem(130);
+  @include u.flexAlignJustify(stretch, center);
+  .product__image {
+    width: u.rem(650);
+    height: u.rem(650);
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .article__wrapper {
+    width: u.rem(650);
+    height: u.rem(650);
+    @include u.flexAlignJustify(center, stretch);
+    article {
+      padding: 0 u.rem(140) 0 u.rem(90);
+      .article__title {
+        font-size: u.rem(45);
+        font-weight: 400;
+        line-height: u.rem(55);
+        margin-bottom: u.rem(20);
+      }
+      .article__desc {
+        font-size: u.rem(20);
+        font-weight: 300;
+        line-height: u.rem(34);
+        margin-bottom: u.rem(30);
+      }
+    }
+  }
+}
+.lazymid__wrapper {
+  @include u.flexAlignJustify(stretch, center);
+  .article__wrapper {
+    width: u.rem(650);
+    height: u.rem(650);
+    @include u.flexAlignJustify(center, stretch);
+    article {
+      padding: 0 u.rem(90) 0 u.rem(60);
+      .article__title {
+        font-size: u.rem(45);
+        font-weight: 400;
+        line-height: u.rem(55);
+        margin-bottom: u.rem(40);
+      }
+      .text__wrapper {
+        margin-bottom: u.rem(4);
+        @include u.flexAlignJustify(stretch, space-between);
+        .statistic__title {
+          font-size: 1rem;
+          font-weight: 500;
+          line-height: 1.3rem;
+          font-family: u.$font-UI;
+          letter-spacing: 0.035rem;
+        }
+        .statistic__percent {
+          font-size: 1rem;
+          font-weight: 500;
+          line-height: 1.3rem;
+          font-family: u.$font-UI;
+          letter-spacing: 0.035rem;
+          opacity: 0;
+          visibility: hidden;
+          transition: all 1s ease-in-out;
+        }
+      }
+      .figure {
+        width: 100%;
+        height: u.rem(5);
+        background-color: color.$light-gray-lazyloading;
+        margin-bottom: u.rem(30);
+        position: relative;
+        &::before {
+          content: "";
+          position: absolute;
+          width: 0;
+          height: 100%;
+        }
+      }
+      #infoarch__figure {
+        &::before {
+          background-color: color.$light-blue-bar-lazyloading;
+          transition: all 3s ease-in-out;
+        }
+      }
+      #appdev__figure {
+        &::before {
+          background-color: color.$blue-lazyloading;
+          transition: all 3s ease-in-out;
+        }
+      }
+      #userinterface__figure {
+        &::before {
+          background-color: color.$rose-lazyloading;
+          transition: all 3s ease-in-out;
+        }
+      }
+    }
+    &.trigger--transition {
+      .text__wrapper {
+        .statistic__percent {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+      .statistic__percent {
+        opacity: 1;
+        visibility: visible;
+      }
+      #infoarch__figure {
+        &::before {
+          width: 53%;
+        }
+      }
+      #appdev__figure {
+        &::before {
+          width: 97%;
+        }
+      }
+      #userinterface__figure {
+        &::before {
+          width: 92%;
+        }
+      }
+    }
+  }
+  .product__image {
+    width: u.rem(650);
+    height: u.rem(650);
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+.lazybot__wrapper {
+  .topgrid__section {
+    .topgrid__wrapper {
+      background: url("https://foton.qodeinteractive.com/wp-content/uploads/2018/06/background-2.jpg") no-repeat left
+        top;
+      @include u.flexAlignJustify(center, center);
+      width: 100%;
+      height: u.rem(635);
+      .grid__wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: u.rem(30);
+        padding: u.rem(220) 0 u.rem(84);
+        .griditem__wrapper {
+          width: u.rem(413);
+          height: u.rem(166);
+          padding: u.rem(30);
+          @include u.flexAlignJustify(center, center);
+          .img__wrapper {
+            width: u.rem(55);
+            height: 100%;
+            position: relative;
+            img {
+              position: absolute;
+              top: 0;
+              transition: all 0.3s ease;
+              &:nth-child(2) {
+                opacity: 0;
+                visibility: 0;
+              }
+            }
+          }
+          .text__wrapper {
+            width: u.rem(298);
+            padding: 1rem 0 0 u.rem(25);
+            span {
+              font-size: u.rem(21);
+              font-weight: 500;
+              line-height: 2rem;
+              font-family: u.$font-UI;
+              display: block;
+              color: color.$purple-lazyloading;
+            }
+            p {
+              display: block;
+              margin: u.rem(9) 0;
+              line-height: u.rem(28);
+            }
+          }
+          &:hover {
+            .img__wrapper {
+              img {
+                &:nth-child(1) {
+                  opacity: 0;
+                  visibility: 0;
+                }
+                &:nth-child(2) {
+                  opacity: 1;
+                  visibility: 1;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .blurbackground__section {
+    .background--behind {
+      background: url("https://foton.qodeinteractive.com/wp-content/uploads/2018/06/Presentation-paralax-img-1.jpg")
+        no-repeat center top;
+      width: 100%;
+      height: u.rem(770);
+      @include u.flexAlignJustify(center, center);
+      .text__wrapper {
+        width: u.rem(700);
+        text-align: center;
+        .title {
+          color: color.$white-lazyloading;
+          font-size: u.rem(55);
+          line-height: u.rem(64);
+          font-weight: 400;
+        }
+        .text {
+          margin: 1rem 0 2rem 0;
+          font-size: u.rem(20);
+          line-height: u.rem(31);
+          color: color.$white-lazyloading;
+          font-weight: 300;
+        }
+        .button__wrapper {
+          @include u.flexAlignJustify(center, center);
+        }
+      }
+    }
+  }
+}

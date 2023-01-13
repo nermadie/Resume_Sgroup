@@ -1,0 +1,32 @@
+@use "../../global/colors" as color;
+@use "../../utils" as u;
+.button {
+  height: u.rem(48);
+  width: u.rem(170);
+  margin-right: 1rem;
+  border-radius: 2rem;
+  @include u.flexAlignJustify(center, center);
+  &.readmore,
+  &.purchase {
+    background-color: color.$rose-button;
+    transition: all 0.3s ease;
+    &:hover {
+      box-shadow: 0px 10px 25px 0px color.$rose-button;
+    }
+  }
+  &.contactus,
+  &.appstore {
+    background-color: color.$blue-button;
+    transition: all 0.3s ease;
+    &:hover {
+      box-shadow: 0px 10px 25px 0px color.$blue-button;
+    }
+  }
+  span {
+    font-size: u.rem(12);
+    font-weight: 600;
+    letter-spacing: u.rem(1.19);
+    color: color.$white-introduction;
+    font-family: u.$font-UI;
+  }
+}
