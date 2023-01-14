@@ -1,0 +1,47 @@
+@use "../global/colors" as color;
+@use "../utils" as u;
+.search__bar {
+  @include u.flexAlignJustify(center);
+  width: 100vw;
+  height: u.rem(120);
+  position: absolute;
+  z-index: 99;
+  background-color: color.$white-searchbar;
+  padding: u.rem(40) u.rem(100);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  .fa-magnifying-glass {
+    color: color.$gray-searchbar;
+    font-size: 1.3rem;
+  }
+  input {
+    font-size: u.rem(14);
+    font-family: u.$font-UI;
+    font-weight: 500;
+    letter-spacing: u.rem(1.19);
+    padding-left: u.rem(50);
+    width: u.rem(1400);
+    border: none;
+    margin-right: auto;
+  }
+  .xmark__wrapper {
+    width: u.rem(40);
+    height: u.rem(40);
+    background-color: color.$blue-searchbar;
+    border-radius: u.rem(5);
+    @include u.flexAlignJustify(center, center);
+    transition: all 0.3s ease;
+    .fa-xmark {
+      color: color.$white-searchbar;
+      font-size: 1.3rem;
+    }
+    &:hover {
+      background-color: color.$rose-searchbar;
+    }
+  }
+  &.show-searchbar {
+    opacity: 1;
+    visibility: visible;
+  }
+}

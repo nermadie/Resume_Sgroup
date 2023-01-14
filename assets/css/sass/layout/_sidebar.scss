@@ -1,0 +1,106 @@
+@use "../global/colors" as color;
+@use "../utils" as u;
+.sidebar__container {
+  width: u.rem(470);
+  height: 100vh;
+  left: 100%;
+  background-color: color.$white-navbar;
+  position: fixed;
+  z-index: 100;
+  padding: 70px 82px 36px;
+  transition: all 0.3s ease;
+  .sidebar__wrapper {
+    position: relative;
+    h5 {
+      color: color.$indigo-introduction;
+      font-size: u.rem(16);
+      font-weight: 400;
+      line-height: 1.3rem;
+      margin-bottom: u.rem(24);
+    }
+    .xmark__wrapper {
+      position: absolute;
+      left: 100%;
+      top: -6%;
+      width: u.rem(40);
+      height: u.rem(40);
+      background-color: color.$purple-introduction;
+      border-radius: u.rem(5);
+      @include u.flexAlignJustify(center, center);
+      transition: all 0.3s ease;
+      .fa-xmark {
+        color: color.$white-searchbar;
+        font-size: 1.3rem;
+      }
+      &:hover {
+        background-color: color.$rose-searchbar;
+      }
+    }
+    .supportdownload {
+      p {
+        font-weight: 300;
+        line-height: u.rem(28);
+        color: color.$indigo-introduction;
+        margin-bottom: u.rem(24);
+      }
+      .link__wrapper {
+        a {
+          width: u.rem(149);
+          height: u.rem(43);
+          &:first-child {
+            margin-right: u.rem(10);
+          }
+        }
+      }
+    }
+    .contactinfo {
+      margin-top: 3rem;
+      a {
+        color: color.$indigo-introduction;
+        @include u.flexAlignJustify(center, flex-start);
+        margin-bottom: u.rem(12);
+        transition: all 0.2s ease;
+        i {
+          font-size: u.rem(16);
+          margin-right: u.rem(16);
+        }
+        span {
+          font-weight: 300;
+          line-height: u.rem(28);
+          color: color.$indigo-introduction;
+          transition: all 0.2s ease;
+        }
+        &:hover {
+          color: color.$rose-footer;
+          span {
+            color: color.$rose-footer;
+          }
+        }
+      }
+    }
+    .followus {
+      margin-top: 3rem;
+      .socialmedia__wrapper {
+        @include u.flexAlignJustify(center, stretch);
+        a {
+          @include u.flexAlignJustify(center, center);
+          width: u.rem(46);
+          height: u.rem(46);
+          background-color: color.$white-footer;
+          border-radius: 50%;
+          font-size: u.rem(20);
+          margin-right: u.rem(18);
+          box-shadow: color.$light-gray-lazyloading 0px 10px 10px 5px;
+          transition: all 0.2s ease;
+          &:hover {
+            color: color.$rose-footer;
+          }
+        }
+      }
+    }
+  }
+  &.show-sidebar {
+    left: calc(100% - 470px);
+    transition: all 0.3s ease;
+  }
+}

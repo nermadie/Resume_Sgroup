@@ -5,7 +5,76 @@ window.addEventListener("load", function () {
   loader.style.opacity = "0";
   loader.style.visibility = "hidden";
 });
+//=================================//
+//SEARCH BAR
+const searchBar = document.querySelector(".search__bar");
+const showSearchBarBtn = document.querySelector("#show-searchbar__btn");
+const hideSearchBarBtn = document.querySelector("#hide-searchbar__btn");
 
+showSearchBarBtn.addEventListener("click", function () {
+  searchBar.classList.add("show-searchbar");
+});
+hideSearchBarBtn.addEventListener("click", function () {
+  searchBar.classList.remove("show-searchbar");
+});
+//=================================//
+//SIDE BAR
+const sideBar = document.querySelector(".sidebar__container");
+const showSideBarBtn = document.querySelector("#show-sidebar__btn");
+const hideSideBarBtn = document.querySelector("#hide-sidebar__btn");
+
+showSideBarBtn.addEventListener("click", function () {
+  sideBar.classList.add("show-sidebar");
+});
+hideSideBarBtn.addEventListener("click", function () {
+  sideBar.classList.remove("show-sidebar");
+});
+//=================================//
+//SLIDER
+const productWrappers = document.querySelectorAll(".product__wrapper");
+const dotWrapper = document.querySelector(".dot__wrapper");
+const TIME_OUT = 5000;
+let sliderIndex = 0;
+let intervalSlider = setInterval(updateSlider, TIME_OUT);
+
+//If dot is clicked, then change sliderIndex and reset the interval
+dotWrapper.addEventListener("click", function (e) {
+  const id = e.target.dataset.id;
+  if (id) {
+    const cellIndex = e.target.getAttribute("cellIndex");
+    if (cellIndex == sliderIndex) return;
+    //clearInterval
+    clearInterval(intervalSlider);
+    //change sliderIndex
+    sliderIndex = cellIndex;
+    showSlide();
+    //reset intervalSlider
+    intervalSlider = setInterval(updateSlider, TIME_OUT);
+  }
+});
+
+function updateSlider() {
+  sliderIndex++;
+  if (sliderIndex == productWrappers.length) {
+    sliderIndex = 0;
+  }
+  showSlide();
+}
+function showSlide() {
+  productWrappers.forEach(wrapper => {
+    if (wrapper.classList.contains("disappear")) {
+      wrapper.classList.remove("disappear");
+    }
+    else if (wrapper.classList.contains("active")) {
+      wrapper.classList.add("disappear");
+      wrapper.classList.remove("active");
+    }
+  });
+  productWrappers[sliderIndex].classList.add("active");
+  productWrappers.forEach(wrapper => { console.log(wrapper.classList); });
+  console.log(sliderIndex);
+}
+//=================================//
 //LAZY LOADING
 //==Introduction
 const introTopField = document.querySelector('.introduction .top__wrapper');
@@ -95,3 +164,79 @@ function updatePercent() {
   }
 }
 articleLazyLoadingObserver.observe(articleLazyLoadingField);
+//=================================//
+//BACK TO TOP and SHOW NAVBAR
+// const  = document.getElementById("nav");
+const backToTopButton = document.querySelector(".back-to-top__button");
+window.addEventListener('scroll', function () {
+  const scrollHeight = window.pageYOffset;
+  // const navHeight = navbar.getBoundingClientRect().height;
+  // if (scrollHeight > navHeight) {
+  //   navbar.classList.add('fixed-nav');
+  // } else {
+  //   navbar.classList.remove('fixed-nav');
+  // }
+
+  if (scrollHeight > 600) {
+    backToTopButton.classList.add('show-back-to-top');
+  } else {
+    backToTopButton.classList.remove('show-back-to-top');
+  }
+});
+//==Setting to make the page scroll to the position before reload
+history.scrollRestoration = 'auto';
+window.onbeforeunload = function () {
+  var scrollPos;
+  if (typeof window.pageYOffset != 'undefined') {
+    scrollPos = window.pageYOffset;
+  }
+  else if (typeof document.compatMode != 'undefined' && document.compatMode != 'BackCompat') {
+    scrollPos = document.documentElement.scrollTop;
+  }
+  else if (typeof document.body != 'undefined') {
+    scrollPos = document.body.scrollTop;
+  }
+  document.cookie = "scrollTop=" + scrollPos;
+}
+window.onload = function () {
+  if (document.cookie.match(/scrollTop=([^;]+)(;|$)/) != null) {
+    var arr = document.cookie.match(/scrollTop=([^;]+)(;|$)/);
+    document.documentElement.scrollTop = parseInt(arr[1]);
+    document.body.scrollTop = parseInt(arr[1]);
+  }
+}
+
+//=================================//
+//FLOATING PICTURE
+const newTechWrapper = document.querySelector('.newtech__wrapper');
+const newTechImage1 = document.querySelector('.newtech-img1');
+const newTechImage2 = document.querySelector('.newtech-img2');
+let intervalFloatingImage;
+let translateValue1 = 0;
+let translateValue2 = 0;
+const floatingImageObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      console.log(entry.isIntersecting);
+      window.addEventListener('scroll', makeImageFloating);
+    } else {
+      console.log(entry.isIntersecting);
+      console.log("I am unstoppable");
+      window.removeEventListener('scroll', makeImageFloating);
+    }
+    function makeImageFloating(event) {
+      event.stopImmediatePropagation();
+      let middleOfScreen = window.innerHeight / 2;
+      let middleOfElement = newTechWrapper.getBoundingClientRect().top + newTechWrapper.getBoundingClientRect().bottom / 2;
+      // console.log(middleOfScreen, middleOfElement);
+      translateValue1 = (middleOfElement - middleOfScreen) * 0.015;
+      translateValue2 = (middleOfElement - middleOfScreen) * 0.03;
+      console.log(translateValue1, translateValue2);
+      newTechImage1.style.transform = `translateY(${translateValue1}px)`;
+      newTechImage2.style.transform = `translateY(${translateValue2}px)`;
+    }
+  });
+});
+
+floatingImageObserver.observe(newTechWrapper);
+//=================================//

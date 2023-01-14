@@ -47,6 +47,70 @@
       </div>
     </div>
     <!--  -->
+    <!-- SEARCH BAR -->
+    <div class="searchbar__container">
+      <div class="search__bar">
+        <i class="fa-solid fa-magnifying-glass fa-flip-horizontal"></i>
+        <input type="text" placeholder="TYPE YOUR SEARCH..." />
+        <a href="#" class="xmark__wrapper" id="hide-searchbar__btn">
+          <i class="fa-solid fa-xmark"></i>
+        </a>
+      </div>
+    </div>
+    <!--  -->
+    <!-- SIDEBAR -->
+    <aside class="sidebar__container">
+      <div class="sidebar__wrapper">
+        <a href="#" class="xmark__wrapper" id="hide-sidebar__btn">
+          <i class="fa-solid fa-xmark"></i>
+        </a>
+        <div class="supportdownload">
+          <h5>Support & Downloads</h5>
+          <p>Quisque actraqum nunc no dolor sit ametaugue dolor. Lorem ipsum dolor sit amet, consyect etur.</p>
+          <div class="link__wrapper">
+            <a href="https://itunes.apple.com" target="_blank" rel="noopener"
+              ><img src="https://foton.qodeinteractive.com/wp-content/uploads/2018/06/side_img2.png" alt="g"
+            /></a>
+            <a href="https://play.google.com" target="_blank" rel="noopener"
+              ><img src="https://foton.qodeinteractive.com/wp-content/uploads/2018/06/side_img1.png" alt="h"
+            /></a>
+          </div>
+        </div>
+        <div class="contactinfo">
+          <h5>Contact Info</h5>
+          <a href="#">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>113 Fulton Street, Suite 721</span>
+          </a>
+          <a href="#">
+            <i class="fa-solid fa-thumbtack"></i>
+            <span>New York, NY 10010</span>
+          </a>
+          <a href="#">
+            <i class="fa-solid fa-envelope"></i>
+            <span>foton@qodeinteractive.com</span>
+          </a>
+          <a href="#">
+            <i class="fa-solid fa-phone"></i>
+            <span>+88 (0) 101 0000 000</span>
+          </a>
+        </div>
+        <div class="followus">
+          <h5>Follow Us</h5>
+          <div class="socialmedia__wrapper">
+            <a href="#" class="twitter">
+              <i class="fa-brands fa-twitter"></i>
+            </a>
+            <a href="#" class="facebook">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href="#" class="google">
+              <i class="fa-brands fa-google-plus-g"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </aside>
     <!-- HEADER -->
     <header>
       <div class="header__wrapper">
@@ -254,19 +318,12 @@
             </div>
           </div>
           <div class="nav__icon search">
-            <a href="#" class="icon__wrapper">
+            <a href="#" class="icon__wrapper" id="show-searchbar__btn">
               <i class="fa-solid fa-magnifying-glass"></i>
             </a>
-            <div class="search__bar">
-              <i class="fa-solid fa-magnifying-glass fa-flip-horizontal"></i>
-              <input type="text" placeholder="TYPE YOUR SEARCH..." />
-              <a href="#" class="xmark__wrapper">
-                <i class="fa-solid fa-xmark"></i>
-              </a>
-            </div>
           </div>
           <div class="nav__icon menu">
-            <a href="#" class="icon__wrapper">
+            <a href="#" class="icon__wrapper" id="show-sidebar__btn">
               <i class="fa-solid fa-bars"></i>
             </a>
             <div class="menu__detail"></div>
@@ -314,9 +371,34 @@
                 </p>
               </div>
             </div>
-            <div class="slider">
-              <span>TESTMONIAL SLIDER</span>
+            <!-- Slider -->
+            <div class="slider__container">
+              <div class="slider__wrapper">
+                <div class="product__wrapper active" id="rose-product">
+                  <img src="https://foton.qodeinteractive.com/wp-content/uploads/2018/07/saas-earphones-1.png" alt="" />
+                  <img src="https://foton.qodeinteractive.com/wp-content/uploads/2018/07/saas-earphones-2.png" alt="" />
+                  <img src="https://foton.qodeinteractive.com/wp-content/uploads/2018/07/saas-earphones-3.png" alt="" />
+                </div>
+                <div class="product__wrapper" id="purple-product">
+                  <img src="https://foton.qodeinteractive.com/wp-content/uploads/2018/07/saas-earphones-4.png" alt="" />
+                  <img src="https://foton.qodeinteractive.com/wp-content/uploads/2018/07/saas-earphones-5.png" alt="" />
+                  <img src="https://foton.qodeinteractive.com/wp-content/uploads/2018/07/saas-earphones-6.png" alt="" />
+                </div>
+                <div class="product__wrapper" id="blue-product">
+                  <img src="https://foton.qodeinteractive.com/wp-content/uploads/2018/07/saas-earphones-1.png" alt="" />
+                  <img src="https://foton.qodeinteractive.com/wp-content/uploads/2018/07/saas-earphones-2.png" alt="" />
+                  <img src="https://foton.qodeinteractive.com/wp-content/uploads/2018/07/saas-earphones-3.png" alt="" />
+                </div>
+              </div>
+              <div class="dot__container">
+                <div class="dot__wrapper">
+                  <button class="dot-btn" data-id="rose-product" cellIndex="0"></button>
+                  <button class="dot-btn" data-id="purple-product" cellIndex="1"></button>
+                  <button class="dot-btn" data-id="blue-product" cellIndex="2"></button>
+                </div>
+              </div>
             </div>
+            <!--  -->
           </div>
         </div>
         <div class="bot__wrapper">
@@ -800,6 +882,12 @@
         <span>© 2018 <a>Qode Interactive</a>, All Rights Reserved</span>
       </div>
     </footer>
+    <!--  -->
+    <!-- back to top button -->
+    <a href="#" class="back-to-top__button">
+      <i class="fas fa-arrow-up"></i>
+    </a>
+    <!--  -->
     <script src="./assets/js/index.js"></script>
   </body>
 </html>

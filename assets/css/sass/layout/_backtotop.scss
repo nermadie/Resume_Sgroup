@@ -1,0 +1,26 @@
+@use "../global/colors" as color;
+@use "../utils" as u;
+.back-to-top__button {
+  font-size: 1.25rem;
+  position: fixed;
+  bottom: 3rem;
+  right: 3rem;
+  width: u.rem(40);
+  height: u.rem(40);
+  border-radius: u.rem(4);
+  @include u.flexAlignJustify(center, center);
+  background-color: color.$rose-back-to-top;
+  color: color.$white-back-to-top;
+  transition: all 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 100;
+  &:hover {
+    transform: translateY(-30%);
+    box-shadow: 0px 5px 15px 0px color.$rose-back-to-top;
+  }
+  &.show-back-to-top {
+    opacity: 1;
+    visibility: visible;
+  }
+}

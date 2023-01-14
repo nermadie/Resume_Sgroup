@@ -253,42 +253,6 @@
           .icon__wrapper .fa-magnifying-glass {
             transition: all 0.2s ease;
           }
-          .search__bar {
-            @include u.flexAlignJustify(center);
-            width: 100vw;
-            height: u.rem(120);
-            position: absolute;
-            right: calc(-1 * u.rem(96));
-            background-color: color.$white-navbar;
-            padding: u.rem(40) u.rem(100);
-            opacity: 0;
-            visibility: hidden;
-            .fa-magnifying-glass {
-              color: color.$gray-navbar;
-              font-size: 1.3rem;
-            }
-            input {
-              font-size: u.rem(14);
-              font-family: u.$font-UI;
-              font-weight: 500;
-              letter-spacing: u.rem(1.19);
-              padding-left: u.rem(50);
-              width: u.rem(1400);
-              border: none;
-              margin-right: auto;
-            }
-            .xmark__wrapper {
-              width: u.rem(40);
-              height: u.rem(40);
-              background-color: color.$blue-navbar;
-              border-radius: u.rem(5);
-              @include u.flexAlignJustify(center, center);
-            }
-            .fa-xmark {
-              color: color.$white-navbar;
-              font-size: 1.3rem;
-            }
-          }
           &:hover {
             .fa-magnifying-glass {
               color: color.$rose-navbar;
