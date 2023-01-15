@@ -5,12 +5,13 @@
   width: 100vw;
   height: u.rem(120);
   position: absolute;
-  z-index: 99;
+  z-index: 999;
   background-color: color.$white-searchbar;
   padding: u.rem(40) u.rem(100);
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s ease;
+  box-shadow: 0 0 1rem 0.01rem color.$light-blue-shadow-navbar;
   .fa-magnifying-glass {
     color: color.$gray-searchbar;
     font-size: 1.3rem;
@@ -21,7 +22,7 @@
     font-weight: 500;
     letter-spacing: u.rem(1.19);
     padding-left: u.rem(50);
-    width: u.rem(1400);
+    width: auto;
     border: none;
     margin-right: auto;
   }
@@ -43,5 +44,10 @@
   &.show-searchbar {
     opacity: 1;
     visibility: visible;
+  }
+  &.active {
+    position: fixed;
+    top: 0;
+    height: u.rem(70);
   }
 }

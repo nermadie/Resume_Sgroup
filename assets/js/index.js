@@ -17,6 +17,11 @@ showSearchBarBtn.addEventListener("click", function () {
 hideSearchBarBtn.addEventListener("click", function () {
   searchBar.classList.remove("show-searchbar");
 });
+//sticky
+const showSearchBarBtnSticky = document.querySelector("#show-searchbar__btn-sticky");
+showSearchBarBtnSticky.addEventListener("click", function () {
+  searchBar.classList.add("show-searchbar");
+});
 //=================================//
 //SIDE BAR
 const sideBar = document.querySelector(".sidebar__container");
@@ -28,6 +33,12 @@ showSideBarBtn.addEventListener("click", function () {
 });
 hideSideBarBtn.addEventListener("click", function () {
   sideBar.classList.remove("show-sidebar");
+});
+//sticky
+const showSideBarBtnSticky = document.querySelector("#show-sidebar__btn-sticky");
+
+showSideBarBtnSticky.addEventListener("click", function () {
+  sideBar.classList.add("show-sidebar");
 });
 //=================================//
 //SLIDER
@@ -74,6 +85,26 @@ function showSlide() {
   productWrappers.forEach(wrapper => { console.log(wrapper.classList); });
   console.log(sliderIndex);
 }
+//=================================//
+//VIDEO
+const videoAnchor = document.querySelector(".video__anchor");
+const videoContainer = document.querySelector(".video__container");
+const videoWrapper = document.querySelector(".video__wrapper");
+const video__iframe = document.querySelector("#video__iframe");
+
+video__iframe.onload = () => {
+  
+};
+
+videoAnchor.addEventListener("click", function () {
+  videoContainer.classList.add("active");
+});
+videoWrapper.addEventListener("click", function (e) {
+  videoContainer.classList.remove("active");
+  video__iframe.src = video__iframe.src;
+  e.stopImmediatePropagation();
+});
+
 //=================================//
 //LAZY LOADING
 //==Introduction
@@ -170,12 +201,16 @@ articleLazyLoadingObserver.observe(articleLazyLoadingField);
 const backToTopButton = document.querySelector(".back-to-top__button");
 window.addEventListener('scroll', function () {
   const scrollHeight = window.pageYOffset;
-  // const navHeight = navbar.getBoundingClientRect().height;
-  // if (scrollHeight > navHeight) {
-  //   navbar.classList.add('fixed-nav');
-  // } else {
-  //   navbar.classList.remove('fixed-nav');
-  // }
+  const header = document.querySelector(".navbar-sticky__wrapper");
+  const searchbar__container = document.querySelector(".search__bar");
+  const botIntro = document.querySelector(".introduction .bot__wrapper");
+  if (scrollHeight > botIntro.getBoundingClientRect().height) {
+    header.classList.add('active');
+    searchBar.classList.add('active');
+  } else {
+    header.classList.remove('active');
+    searchBar.classList.remove('active');
+  }
 
   if (scrollHeight > 600) {
     backToTopButton.classList.add('show-back-to-top');
@@ -211,7 +246,6 @@ window.onload = function () {
 const newTechWrapper = document.querySelector('.newtech__wrapper');
 const newTechImage1 = document.querySelector('.newtech-img1');
 const newTechImage2 = document.querySelector('.newtech-img2');
-let intervalFloatingImage;
 let translateValue1 = 0;
 let translateValue2 = 0;
 const floatingImageObserver = new IntersectionObserver(entries => {
@@ -231,7 +265,7 @@ const floatingImageObserver = new IntersectionObserver(entries => {
       // console.log(middleOfScreen, middleOfElement);
       translateValue1 = (middleOfElement - middleOfScreen) * 0.015;
       translateValue2 = (middleOfElement - middleOfScreen) * 0.03;
-      console.log(translateValue1, translateValue2);
+      // console.log(translateValue1, translateValue2);
       newTechImage1.style.transform = `translateY(${translateValue1}px)`;
       newTechImage2.style.transform = `translateY(${translateValue2}px)`;
     }

@@ -41,3 +41,8 @@ a:active {
   color: color.$white;
   background: color.$rose;
 }
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}

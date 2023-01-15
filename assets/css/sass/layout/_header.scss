@@ -2,9 +2,10 @@
 @use "../global/colors" as color;
 .header__wrapper {
   height: u.rem(120);
-  padding: 0 u.rem(40);
+  width: 100%;
   background-color: color.$black-navbar;
-  @include u.flexAlignJustify(center, space-between);
+  z-index: 997;
+  position: relative;
   .logo__wrapper {
     width: u.rem(104);
     height: auto;
@@ -19,7 +20,6 @@
     }
   }
   .navbar__wrapper {
-    margin-left: auto;
     @include u.flexAlignJustify(center);
     height: 100%;
     position: relative;
@@ -268,6 +268,85 @@
           &:hover {
             .icon__wrapper {
               background-color: color.$rose-navbar;
+            }
+          }
+        }
+      }
+    }
+  }
+  // &.fixed-navbar {
+  //   position: fixed;
+  //   top: 0;
+  //   width: 100%;
+  //   z-index: 998;
+  // }
+  .navbar-top__wrapper {
+    padding: 0 u.rem(40);
+    height: 100%;
+    width: 100%;
+    @include u.flexAlignJustify(center, space-between);
+  }
+  .navbar-sticky__wrapper {
+    padding: 0 u.rem(40);
+    box-shadow: 0 0 u.rem(2) 0 color.$gray-navbar;
+    background-color: color.$white-navbar;
+    @include u.flexAlignJustify(center, space-between);
+    position: fixed;
+    height: u.rem(70);
+    width: 100%;
+    top: -100%;
+    left: 0;
+    z-index: 998;
+    transition: all 0.5s ease;
+    .logo__wrapper {
+      img {
+        width: u.rem(80);
+      }
+    }
+    &.active {
+      top: 0;
+    }
+    .navbar__wrapper {
+      .nav {
+        &__item {
+          .dropdown__list {
+            top: u.rem(70);
+            &.ddlist--bigtab {
+              right: calc(100% - 290px);
+            }
+          }
+          a {
+            .item__text {
+              color: color.$purple-navbar;
+            }
+          }
+          &:hover {
+            .item__text {
+              color: color.$rose-navbar;
+            }
+          }
+        }
+        &__icon {
+          &.search {
+            .fa-magnifying-glass {
+              color: color.$purple-navbar;
+            }
+          }
+          &.menu {
+            .icon__wrapper {
+              background-color: color.$purple-navbar;
+            }
+          }
+          &:hover {
+            &.search {
+              .fa-magnifying-glass {
+                color: color.$rose-navbar;
+              }
+            }
+            &.menu {
+              .icon__wrapper {
+                background-color: color.$rose-navbar;
+              }
             }
           }
         }

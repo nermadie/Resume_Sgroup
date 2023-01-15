@@ -67,13 +67,18 @@ a:active {
   background: #ff8a73;
 }
 
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
 .header__wrapper {
   height: 7.5rem;
-  padding: 0 2.5rem;
+  width: 100%;
   background-color: #101014;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  z-index: 997;
+  position: relative;
 }
 .header__wrapper .logo__wrapper {
   width: 6.5rem;
@@ -93,7 +98,6 @@ a:active {
      object-fit: cover;
 }
 .header__wrapper .navbar__wrapper {
-  margin-left: auto;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -338,6 +342,59 @@ a:active {
   transition: all 0.2s ease;
 }
 .header__wrapper .navbar__wrapper .nav__icon.menu:hover .icon__wrapper {
+  background-color: #ff8a73;
+}
+.header__wrapper .navbar-top__wrapper {
+  padding: 0 2.5rem;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header__wrapper .navbar-sticky__wrapper {
+  padding: 0 2.5rem;
+  box-shadow: 0 0 0.125rem 0 #827e8f;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  height: 4.375rem;
+  width: 100%;
+  top: -100%;
+  left: 0;
+  z-index: 998;
+  transition: all 0.5s ease;
+}
+.header__wrapper .navbar-sticky__wrapper .logo__wrapper img {
+  width: 5rem;
+}
+.header__wrapper .navbar-sticky__wrapper.active {
+  top: 0;
+}
+.header__wrapper .navbar-sticky__wrapper .navbar__wrapper .nav__item .dropdown__list {
+  top: 4.375rem;
+}
+.header__wrapper .navbar-sticky__wrapper .navbar__wrapper .nav__item .dropdown__list.ddlist--bigtab {
+  right: calc(100% - 290px);
+}
+.header__wrapper .navbar-sticky__wrapper .navbar__wrapper .nav__item a .item__text {
+  color: #58468c;
+}
+.header__wrapper .navbar-sticky__wrapper .navbar__wrapper .nav__item:hover .item__text {
+  color: #ff8a73;
+}
+.header__wrapper .navbar-sticky__wrapper .navbar__wrapper .nav__icon.search .fa-magnifying-glass {
+  color: #58468c;
+}
+.header__wrapper .navbar-sticky__wrapper .navbar__wrapper .nav__icon.menu .icon__wrapper {
+  background-color: #58468c;
+}
+.header__wrapper .navbar-sticky__wrapper .navbar__wrapper .nav__icon:hover.search .fa-magnifying-glass {
+  color: #ff8a73;
+}
+.header__wrapper .navbar-sticky__wrapper .navbar__wrapper .nav__icon:hover.menu .icon__wrapper {
   background-color: #ff8a73;
 }
 
@@ -846,10 +903,12 @@ a:active {
   visibility: visible;
 }
 
-.videoanchor__wrapper .video__anchor {
+.videoanchor__wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.videoanchor__wrapper .video__anchor {
   position: relative;
 }
 .videoanchor__wrapper .video__anchor span img {
@@ -859,21 +918,27 @@ a:active {
   transform: translate(-50%, -50%);
 }
 
-.video__view {
-  display: none;
+.video__container {
   width: 100vw;
   height: 100vh;
-  background-color: #58468c;
-  position: absolute;
-  opacity: 0.8;
-  z-index: 98;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s ease-in-out;
 }
-.video__view .video__wrapper {
-  width: 100%;
-  height: 100%;
+.video__container .video__wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(87, 70, 140, 0.7529411765);
+}
+.video__container.active {
+  opacity: 1;
+  visibility: visible;
 }
 
 .newtech__wrapper {
@@ -1644,12 +1709,13 @@ a:active {
   width: 100vw;
   height: 7.5rem;
   position: absolute;
-  z-index: 99;
+  z-index: 999;
   background-color: #fff;
   padding: 2.5rem 6.25rem;
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s ease;
+  box-shadow: 0 0 1rem 0.01rem #a0ade7;
 }
 .search__bar .fa-magnifying-glass {
   color: #827e8f;
@@ -1661,7 +1727,7 @@ a:active {
   font-weight: 500;
   letter-spacing: 0.074375rem;
   padding-left: 3.125rem;
-  width: 87.5rem;
+  width: auto;
   border: none;
   margin-right: auto;
 }
@@ -1686,6 +1752,11 @@ a:active {
   opacity: 1;
   visibility: visible;
 }
+.search__bar.active {
+  position: fixed;
+  top: 0;
+  height: 4.375rem;
+}
 
 .sidebar__container {
   width: 29.375rem;
@@ -1693,9 +1764,9 @@ a:active {
   left: 100%;
   background-color: #fff;
   position: fixed;
-  z-index: 100;
+  z-index: 999;
   padding: 70px 82px 36px;
-  transition: all 0.3s ease;
+  transition: all 0.6s cubic-bezier(0.77, 0, 0.175, 1);
 }
 .sidebar__container .sidebar__wrapper {
   position: relative;
@@ -1793,5 +1864,5 @@ a:active {
 }
 .sidebar__container.show-sidebar {
   left: calc(100% - 470px);
-  transition: all 0.3s ease;
+  box-shadow: 0 10px 55px 5px rgba(137, 173, 255, 0.35);
 }/*# sourceMappingURL=style.css.map */

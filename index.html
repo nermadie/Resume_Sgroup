@@ -52,18 +52,18 @@
       <div class="search__bar">
         <i class="fa-solid fa-magnifying-glass fa-flip-horizontal"></i>
         <input type="text" placeholder="TYPE YOUR SEARCH..." />
-        <a href="#" class="xmark__wrapper" id="hide-searchbar__btn">
+        <button type="button" class="xmark__wrapper" id="hide-searchbar__btn">
           <i class="fa-solid fa-xmark"></i>
-        </a>
+        </button>
       </div>
     </div>
     <!--  -->
     <!-- SIDEBAR -->
     <aside class="sidebar__container">
       <div class="sidebar__wrapper">
-        <a href="#" class="xmark__wrapper" id="hide-sidebar__btn">
+        <button type="button" class="xmark__wrapper" id="hide-sidebar__btn">
           <i class="fa-solid fa-xmark"></i>
-        </a>
+        </button>
         <div class="supportdownload">
           <h5>Support & Downloads</h5>
           <p>Quisque actraqum nunc no dolor sit ametaugue dolor. Lorem ipsum dolor sit amet, consyect etur.</p>
@@ -114,221 +114,436 @@
     <!-- HEADER -->
     <header>
       <div class="header__wrapper">
-        <div class="logo__wrapper">
-          <a href="#">
-            <img src="https://foton.qodeinteractive.com/wp-content/uploads/2018/07/logo2.png" alt="Logo" />
-          </a>
-        </div>
-        <div class="navbar__wrapper">
-          <div class="nav__item">
+        <!-- NAVBAR TOP -->
+        <div class="navbar-top__wrapper">
+          <div class="logo__wrapper">
             <a href="#">
-              <span class="item__text">HOME</span>
+              <img src="https://foton.qodeinteractive.com/wp-content/uploads/2018/07/logo2.png" alt="Logo" />
             </a>
-            <ul class="dropdown__list">
-              <a href="#" class="dropdown__item"><span>Main Home</span></a>
-              <a href="#" class="dropdown__item"><span>App Landing Home</span></a>
-              <a href="#" class="dropdown__item"><span>Hosting Home</span></a>
-              <a href="#" class="dropdown__item"><span>Startup Agency Home</span></a>
-              <a href="#" class="dropdown__item"><span>Metro Showcase</span></a>
-              <a href="#" class="dropdown__item"><span>Marketing Home</span></a>
-              <a href="#" class="dropdown__item"><span>Tech Home</span></a>
-              <a href="#" class="dropdown__item"><span>SasS Home</span></a>
-              <a href="#" class="dropdown__item"><span>Digital Agency</span></a>
-              <a href="#" class="dropdown__item"><span>Product Presentation</span></a>
-              <a href="#" class="dropdown__item"><span>Split Slider Home</span></a>
-              <a href="#" class="dropdown__item"><span>App Presentation</span></a>
-              <a href="#" class="dropdown__item"><span>Vertical Showcase</span></a>
-              <a href="#" class="dropdown__item"><span>Parallax Showcase</span></a>
-              <a href="#" class="dropdown__item"><span>Landing</span></a>
-            </ul>
           </div>
-          <div class="nav__item">
-            <a href="#">
-              <span class="item__text">PAGES</span>
-            </a>
-            <ul class="dropdown__list">
-              <a href="#" class="dropdown__item"><span>About Us</span></a>
-              <a href="#" class="dropdown__item"><span>About Me</span></a>
-              <a href="#" class="dropdown__item"><span>Contact Us</span></a>
-              <a href="#" class="dropdown__item"><span>Get In Touch</span></a>
-              <a href="#" class="dropdown__item"><span>Our Services</span></a>
-              <a href="#" class="dropdown__item"><span>Our Clients</span></a>
-              <a href="#" class="dropdown__item"><span>What We Offer</span></a>
-              <a href="#" class="dropdown__item"><span>Meet The Team</span></a>
-              <a href="#" class="dropdown__item"><span>Pricing Plans</span></a>
-              <a href="#" class="dropdown__item"><span>Coming Soon</span></a>
-              <a href="#" class="dropdown__item"><span>FAQ Page</span></a>
-            </ul>
-          </div>
-          <div class="nav__item">
-            <a href="#">
-              <span class="item__text">PORTFOLIO</span>
-            </a>
-            <ul class="dropdown__list">
-              <a href="#" class="dropdown__item"><span>Standard</span></a>
-              <a href="#" class="dropdown__item"><span>Gallery</span></a>
-              <a href="#" class="dropdown__item"><span>Masonry</span></a>
-              <a href="#" class="dropdown__item"><span>Masonry Wide</span></a>
-              <div class="sublist layouts">
-                <a href="#" class="dropdown__item">
-                  <span>Layouts</span>
-                  <i class="fa-solid fa-angle-right"></i>
-                </a>
-                <ul class="sublistbox layouts__list">
-                  <a href="#" class="dropdown__item"><span>2 Columns</span></a>
-                  <a href="#" class="dropdown__item"><span>3 Columns</span></a>
-                  <a href="#" class="dropdown__item"><span>3 Columns Wide</span></a>
-                  <a href="#" class="dropdown__item"><span>4 Columns</span></a>
-                  <a href="#" class="dropdown__item"><span>4 Columns Wide</span></a>
-                  <a href="#" class="dropdown__item"><span>5 Columns Wide</span></a>
-                </ul>
+          <div class="navbar__wrapper">
+            <div class="nav__item">
+              <a href="#">
+                <span class="item__text">HOME</span>
+              </a>
+              <ul class="dropdown__list">
+                <a href="#" class="dropdown__item"><span>Main Home</span></a>
+                <a href="#" class="dropdown__item"><span>App Landing Home</span></a>
+                <a href="#" class="dropdown__item"><span>Hosting Home</span></a>
+                <a href="#" class="dropdown__item"><span>Startup Agency Home</span></a>
+                <a href="#" class="dropdown__item"><span>Metro Showcase</span></a>
+                <a href="#" class="dropdown__item"><span>Marketing Home</span></a>
+                <a href="#" class="dropdown__item"><span>Tech Home</span></a>
+                <a href="#" class="dropdown__item"><span>SasS Home</span></a>
+                <a href="#" class="dropdown__item"><span>Digital Agency</span></a>
+                <a href="#" class="dropdown__item"><span>Product Presentation</span></a>
+                <a href="#" class="dropdown__item"><span>Split Slider Home</span></a>
+                <a href="#" class="dropdown__item"><span>App Presentation</span></a>
+                <a href="#" class="dropdown__item"><span>Vertical Showcase</span></a>
+                <a href="#" class="dropdown__item"><span>Parallax Showcase</span></a>
+                <a href="#" class="dropdown__item"><span>Landing</span></a>
+              </ul>
+            </div>
+            <div class="nav__item">
+              <a href="#">
+                <span class="item__text">PAGES</span>
+              </a>
+              <ul class="dropdown__list">
+                <a href="#" class="dropdown__item"><span>About Us</span></a>
+                <a href="#" class="dropdown__item"><span>About Me</span></a>
+                <a href="#" class="dropdown__item"><span>Contact Us</span></a>
+                <a href="#" class="dropdown__item"><span>Get In Touch</span></a>
+                <a href="#" class="dropdown__item"><span>Our Services</span></a>
+                <a href="#" class="dropdown__item"><span>Our Clients</span></a>
+                <a href="#" class="dropdown__item"><span>What We Offer</span></a>
+                <a href="#" class="dropdown__item"><span>Meet The Team</span></a>
+                <a href="#" class="dropdown__item"><span>Pricing Plans</span></a>
+                <a href="#" class="dropdown__item"><span>Coming Soon</span></a>
+                <a href="#" class="dropdown__item"><span>FAQ Page</span></a>
+              </ul>
+            </div>
+            <div class="nav__item">
+              <a href="#">
+                <span class="item__text">PORTFOLIO</span>
+              </a>
+              <ul class="dropdown__list">
+                <a href="#" class="dropdown__item"><span>Standard</span></a>
+                <a href="#" class="dropdown__item"><span>Gallery</span></a>
+                <a href="#" class="dropdown__item"><span>Masonry</span></a>
+                <a href="#" class="dropdown__item"><span>Masonry Wide</span></a>
+                <div class="sublist layouts">
+                  <a href="#" class="dropdown__item">
+                    <span>Layouts</span>
+                    <i class="fa-solid fa-angle-right"></i>
+                  </a>
+                  <ul class="sublistbox layouts__list">
+                    <a href="#" class="dropdown__item"><span>2 Columns</span></a>
+                    <a href="#" class="dropdown__item"><span>3 Columns</span></a>
+                    <a href="#" class="dropdown__item"><span>3 Columns Wide</span></a>
+                    <a href="#" class="dropdown__item"><span>4 Columns</span></a>
+                    <a href="#" class="dropdown__item"><span>4 Columns Wide</span></a>
+                    <a href="#" class="dropdown__item"><span>5 Columns Wide</span></a>
+                  </ul>
+                </div>
+                <div class="sublist single">
+                  <a href="#" class="dropdown__item">
+                    <span>Single</span>
+                    <i class="fa-solid fa-angle-right"></i>
+                  </a>
+                  <ul class="sublistbox single__list">
+                    <a href="#" class="dropdown__item"><span>Small Gallery</span></a>
+                    <a href="#" class="dropdown__item"><span>Big Gallery</span></a>
+                    <a href="#" class="dropdown__item"><span>Small Slider</span></a>
+                    <a href="#" class="dropdown__item"><span>Big Slider</span></a>
+                    <a href="#" class="dropdown__item"><span>Small Images</span></a>
+                    <a href="#" class="dropdown__item"><span>Big Images</span></a>
+                  </ul>
+                </div>
+              </ul>
+            </div>
+            <div class="nav__item">
+              <a href="#">
+                <span class="item__text">BLOG</span>
+              </a>
+              <ul class="dropdown__list">
+                <a href="#" class="dropdown__item"><span>Right Sidebar</span></a>
+                <a href="#" class="dropdown__item"><span>Left Sidebar</span></a>
+                <a href="#" class="dropdown__item"><span>No Sidebar</span></a>
+                <a href="#" class="dropdown__item"><span>Masonry</span></a>
+                <div class="sublist posttypes">
+                  <a href="#" class="dropdown__item">
+                    <i class="fa-solid fa-angle-left"></i>
+                    <span>Post Types</span>
+                  </a>
+                  <ul class="sublistbox posttypes__list">
+                    <a href="#" class="dropdown__item"><span>Standard Post</span></a>
+                    <a href="#" class="dropdown__item"><span>Quote Post</span></a>
+                    <a href="#" class="dropdown__item"><span>Link Post</span></a>
+                    <a href="#" class="dropdown__item"><span>Gallery Post</span></a>
+                    <a href="#" class="dropdown__item"><span>Video Post</span></a>
+                    <a href="#" class="dropdown__item"><span>Audio Post</span></a>
+                  </ul>
+                </div>
+              </ul>
+            </div>
+            <div class="nav__item">
+              <a href="#">
+                <span class="item__text">SHOP</span>
+              </a>
+              <ul class="dropdown__list">
+                <a href="#" class="dropdown__item"><span>Product List</span></a>
+                <a href="#" class="dropdown__item"><span>Single Product</span></a>
+                <a href="#" class="dropdown__item"><span>Layouts</span></a>
+                <div class="sublist layouts">
+                  <a href="#" class="dropdown__item">
+                    <i class="fa-solid fa-angle-left"></i>
+                    <span>Layouts</span>
+                  </a>
+                  <ul class="sublistbox layouts__list">
+                    <a href="#" class="dropdown__item"><span>Three Columns</span></a>
+                    <a href="#" class="dropdown__item"><span>Four Columns</span></a>
+                    <a href="#" class="dropdown__item"><span>Four Columns Wide</span></a>
+                    <a href="#" class="dropdown__item"><span>Five Columns Wide</span></a>
+                  </ul>
+                </div>
+                <div class="sublist shoppages">
+                  <a href="#" class="dropdown__item">
+                    <i class="fa-solid fa-angle-left"></i>
+                    <span>Shop Pages</span>
+                  </a>
+                  <ul class="sublistbox shoppages__list">
+                    <a href="#" class="dropdown__item"><span>My Account</span></a>
+                    <a href="#" class="dropdown__item"><span>Cart</span></a>
+                    <a href="#" class="dropdown__item"><span>Checkout</span></a>
+                  </ul>
+                </div>
+              </ul>
+            </div>
+            <div class="nav__item">
+              <a href="#">
+                <span class="item__text">ELEMENTS</span>
+              </a>
+              <ul class="dropdown__list ddlist--bigtab">
+                <div class="presentation__col dropdown__col">
+                  <span class="col__title">PRESENTATION</span>
+                  <a href="#" class="dropdown__item"><span>Parallax Section</span></a>
+                  <a href="#" class="dropdown__item"><span>Single Image</span></a>
+                  <a href="#" class="dropdown__item"><span>Product Showcase</span></a>
+                  <a href="#" class="dropdown__item"><span>Floating Images</span></a>
+                  <a href="#" class="dropdown__item"><span>Team</span></a>
+                  <a href="#" class="dropdown__item"><span>Triple Frame Highlight</span></a>
+                  <a href="#" class="dropdown__item"><span>Video Button</span></a>
+                  <a href="#" class="dropdown__item"><span>Split Slider</span></a>
+                </div>
+                <div class="classic__col dropdown__col">
+                  <span class="col__title">CLASSIC</span>
+                  <a href="#" class="dropdown__item"><span>Accordions</span></a>
+                  <a href="#" class="dropdown__item"><span>Tabs</span></a>
+                  <a href="#" class="dropdown__item"><span>Clients</span></a>
+                  <a href="#" class="dropdown__item"><span>Buttons</span></a>
+                  <a href="#" class="dropdown__item"><span>Icon With Text</span></a>
+                  <a href="#" class="dropdown__item"><span>Icon List Item</span></a>
+                  <a href="#" class="dropdown__item"><span>Progress Bar</span></a>
+                  <a href="#" class="dropdown__item"><span>Contact Form</span></a>
+                </div>
+                <div class="typography__col dropdown__col">
+                  <span class="col__title">TYPOGRAPHY</span>
+                  <a href="#" class="dropdown__item"><span>Blockquote</span></a>
+                  <a href="#" class="dropdown__item"><span>Columns</span></a>
+                  <a href="#" class="dropdown__item"><span>Headings</span></a>
+                  <a href="#" class="dropdown__item"><span>Custom Font</span></a>
+                  <a href="#" class="dropdown__item"><span>Dropcaps & Highlights</span></a>
+                  <a href="#" class="dropdown__item"><span>Section Title</span></a>
+                  <a href="#" class="dropdown__item"><span>Separators</span></a>
+                  <a href="#" class="dropdown__item"><span>Testmonials</span></a>
+                </div>
+                <div class="infographic__col dropdown__col">
+                  <span class="col__title">INFOGRAPHIC</span>
+                  <a href="#" class="dropdown__item"><span>Comparison Pricing</span></a>
+                  <a href="#" class="dropdown__item"><span>Pie Chart</span></a>
+                  <a href="#" class="dropdown__item"><span>Pricing Tables</span></a>
+                  <a href="#" class="dropdown__item"><span>Google Maps</span></a>
+                  <a href="#" class="dropdown__item"><span>Countdown</span></a>
+                  <a href="#" class="dropdown__item"><span>Counters</span></a>
+                  <a href="#" class="dropdown__item"><span>Portfolio List</span></a>
+                  <a href="#" class="dropdown__item"><span>Blog List</span></a>
+                  <a href="#" class="dropdown__item"><span>Shop List</span></a>
+                </div>
+              </ul>
+            </div>
+            <div class="nav__icon shopping__cart">
+              <button type="button" class="icon__wrapper">
+                <i class="fa-solid fa-cart-shopping"></i>
+              </button>
+              <div class="cart__detail">
+                <span>No products in the cart.</span>
               </div>
-              <div class="sublist single">
-                <a href="#" class="dropdown__item">
-                  <span>Single</span>
-                  <i class="fa-solid fa-angle-right"></i>
-                </a>
-                <ul class="sublistbox single__list">
-                  <a href="#" class="dropdown__item"><span>Small Gallery</span></a>
-                  <a href="#" class="dropdown__item"><span>Big Gallery</span></a>
-                  <a href="#" class="dropdown__item"><span>Small Slider</span></a>
-                  <a href="#" class="dropdown__item"><span>Big Slider</span></a>
-                  <a href="#" class="dropdown__item"><span>Small Images</span></a>
-                  <a href="#" class="dropdown__item"><span>Big Images</span></a>
-                </ul>
-              </div>
-            </ul>
-          </div>
-          <div class="nav__item">
-            <a href="#">
-              <span class="item__text">BLOG</span>
-            </a>
-            <ul class="dropdown__list">
-              <a href="#" class="dropdown__item"><span>Right Sidebar</span></a>
-              <a href="#" class="dropdown__item"><span>Left Sidebar</span></a>
-              <a href="#" class="dropdown__item"><span>No Sidebar</span></a>
-              <a href="#" class="dropdown__item"><span>Masonry</span></a>
-              <div class="sublist posttypes">
-                <a href="#" class="dropdown__item">
-                  <i class="fa-solid fa-angle-left"></i>
-                  <span>Post Types</span>
-                </a>
-                <ul class="sublistbox posttypes__list">
-                  <a href="#" class="dropdown__item"><span>Standard Post</span></a>
-                  <a href="#" class="dropdown__item"><span>Quote Post</span></a>
-                  <a href="#" class="dropdown__item"><span>Link Post</span></a>
-                  <a href="#" class="dropdown__item"><span>Gallery Post</span></a>
-                  <a href="#" class="dropdown__item"><span>Video Post</span></a>
-                  <a href="#" class="dropdown__item"><span>Audio Post</span></a>
-                </ul>
-              </div>
-            </ul>
-          </div>
-          <div class="nav__item">
-            <a href="#">
-              <span class="item__text">SHOP</span>
-            </a>
-            <ul class="dropdown__list">
-              <a href="#" class="dropdown__item"><span>Product List</span></a>
-              <a href="#" class="dropdown__item"><span>Single Product</span></a>
-              <a href="#" class="dropdown__item"><span>Layouts</span></a>
-              <div class="sublist layouts">
-                <a href="#" class="dropdown__item">
-                  <i class="fa-solid fa-angle-left"></i>
-                  <span>Layouts</span>
-                </a>
-                <ul class="sublistbox layouts__list">
-                  <a href="#" class="dropdown__item"><span>Three Columns</span></a>
-                  <a href="#" class="dropdown__item"><span>Four Columns</span></a>
-                  <a href="#" class="dropdown__item"><span>Four Columns Wide</span></a>
-                  <a href="#" class="dropdown__item"><span>Five Columns Wide</span></a>
-                </ul>
-              </div>
-              <div class="sublist shoppages">
-                <a href="#" class="dropdown__item">
-                  <i class="fa-solid fa-angle-left"></i>
-                  <span>Shop Pages</span>
-                </a>
-                <ul class="sublistbox shoppages__list">
-                  <a href="#" class="dropdown__item"><span>My Account</span></a>
-                  <a href="#" class="dropdown__item"><span>Cart</span></a>
-                  <a href="#" class="dropdown__item"><span>Checkout</span></a>
-                </ul>
-              </div>
-            </ul>
-          </div>
-          <div class="nav__item">
-            <a href="#">
-              <span class="item__text">ELEMENTS</span>
-            </a>
-            <ul class="dropdown__list ddlist--bigtab">
-              <div class="presentation__col dropdown__col">
-                <span class="col__title">PRESENTATION</span>
-                <a href="#" class="dropdown__item"><span>Parallax Section</span></a>
-                <a href="#" class="dropdown__item"><span>Single Image</span></a>
-                <a href="#" class="dropdown__item"><span>Product Showcase</span></a>
-                <a href="#" class="dropdown__item"><span>Floating Images</span></a>
-                <a href="#" class="dropdown__item"><span>Team</span></a>
-                <a href="#" class="dropdown__item"><span>Triple Frame Highlight</span></a>
-                <a href="#" class="dropdown__item"><span>Video Button</span></a>
-                <a href="#" class="dropdown__item"><span>Split Slider</span></a>
-              </div>
-              <div class="classic__col dropdown__col">
-                <span class="col__title">CLASSIC</span>
-                <a href="#" class="dropdown__item"><span>Accordions</span></a>
-                <a href="#" class="dropdown__item"><span>Tabs</span></a>
-                <a href="#" class="dropdown__item"><span>Clients</span></a>
-                <a href="#" class="dropdown__item"><span>Buttons</span></a>
-                <a href="#" class="dropdown__item"><span>Icon With Text</span></a>
-                <a href="#" class="dropdown__item"><span>Icon List Item</span></a>
-                <a href="#" class="dropdown__item"><span>Progress Bar</span></a>
-                <a href="#" class="dropdown__item"><span>Contact Form</span></a>
-              </div>
-              <div class="typography__col dropdown__col">
-                <span class="col__title">TYPOGRAPHY</span>
-                <a href="#" class="dropdown__item"><span>Blockquote</span></a>
-                <a href="#" class="dropdown__item"><span>Columns</span></a>
-                <a href="#" class="dropdown__item"><span>Headings</span></a>
-                <a href="#" class="dropdown__item"><span>Custom Font</span></a>
-                <a href="#" class="dropdown__item"><span>Dropcaps & Highlights</span></a>
-                <a href="#" class="dropdown__item"><span>Section Title</span></a>
-                <a href="#" class="dropdown__item"><span>Separators</span></a>
-                <a href="#" class="dropdown__item"><span>Testmonials</span></a>
-              </div>
-              <div class="infographic__col dropdown__col">
-                <span class="col__title">INFOGRAPHIC</span>
-                <a href="#" class="dropdown__item"><span>Comparison Pricing</span></a>
-                <a href="#" class="dropdown__item"><span>Pie Chart</span></a>
-                <a href="#" class="dropdown__item"><span>Pricing Tables</span></a>
-                <a href="#" class="dropdown__item"><span>Google Maps</span></a>
-                <a href="#" class="dropdown__item"><span>Countdown</span></a>
-                <a href="#" class="dropdown__item"><span>Counters</span></a>
-                <a href="#" class="dropdown__item"><span>Portfolio List</span></a>
-                <a href="#" class="dropdown__item"><span>Blog List</span></a>
-                <a href="#" class="dropdown__item"><span>Shop List</span></a>
-              </div>
-            </ul>
-          </div>
-          <div class="nav__icon shopping__cart">
-            <a href="#" class="icon__wrapper">
-              <i class="fa-solid fa-cart-shopping"></i>
-            </a>
-            <div class="cart__detail">
-              <span>No products in the cart.</span>
+            </div>
+            <div class="nav__icon search">
+              <button type="button" class="icon__wrapper" id="show-searchbar__btn">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+            </div>
+            <div class="nav__icon menu">
+              <button type="button" class="icon__wrapper" id="show-sidebar__btn">
+                <i class="fa-solid fa-bars"></i>
+              </button>
+              <div class="menu__detail"></div>
             </div>
           </div>
-          <div class="nav__icon search">
-            <a href="#" class="icon__wrapper" id="show-searchbar__btn">
-              <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+        <!--  -->
+        <!-- NAVBAR STICKY -->
+        <div class="navbar-sticky__wrapper">
+          <div class="logo__wrapper">
+            <a href="#">
+              <img src="https://foton.qodeinteractive.com/wp-content/uploads/2018/07/logo1.png" alt="Logo" />
             </a>
           </div>
-          <div class="nav__icon menu">
-            <a href="#" class="icon__wrapper" id="show-sidebar__btn">
-              <i class="fa-solid fa-bars"></i>
-            </a>
-            <div class="menu__detail"></div>
+          <div class="navbar__wrapper">
+            <div class="nav__item">
+              <a href="#">
+                <span class="item__text">HOME</span>
+              </a>
+              <ul class="dropdown__list">
+                <a href="#" class="dropdown__item"><span>Main Home</span></a>
+                <a href="#" class="dropdown__item"><span>App Landing Home</span></a>
+                <a href="#" class="dropdown__item"><span>Hosting Home</span></a>
+                <a href="#" class="dropdown__item"><span>Startup Agency Home</span></a>
+                <a href="#" class="dropdown__item"><span>Metro Showcase</span></a>
+                <a href="#" class="dropdown__item"><span>Marketing Home</span></a>
+                <a href="#" class="dropdown__item"><span>Tech Home</span></a>
+                <a href="#" class="dropdown__item"><span>SasS Home</span></a>
+                <a href="#" class="dropdown__item"><span>Digital Agency</span></a>
+                <a href="#" class="dropdown__item"><span>Product Presentation</span></a>
+                <a href="#" class="dropdown__item"><span>Split Slider Home</span></a>
+                <a href="#" class="dropdown__item"><span>App Presentation</span></a>
+                <a href="#" class="dropdown__item"><span>Vertical Showcase</span></a>
+                <a href="#" class="dropdown__item"><span>Parallax Showcase</span></a>
+                <a href="#" class="dropdown__item"><span>Landing</span></a>
+              </ul>
+            </div>
+            <div class="nav__item">
+              <a href="#">
+                <span class="item__text">PAGES</span>
+              </a>
+              <ul class="dropdown__list">
+                <a href="#" class="dropdown__item"><span>About Us</span></a>
+                <a href="#" class="dropdown__item"><span>About Me</span></a>
+                <a href="#" class="dropdown__item"><span>Contact Us</span></a>
+                <a href="#" class="dropdown__item"><span>Get In Touch</span></a>
+                <a href="#" class="dropdown__item"><span>Our Services</span></a>
+                <a href="#" class="dropdown__item"><span>Our Clients</span></a>
+                <a href="#" class="dropdown__item"><span>What We Offer</span></a>
+                <a href="#" class="dropdown__item"><span>Meet The Team</span></a>
+                <a href="#" class="dropdown__item"><span>Pricing Plans</span></a>
+                <a href="#" class="dropdown__item"><span>Coming Soon</span></a>
+                <a href="#" class="dropdown__item"><span>FAQ Page</span></a>
+              </ul>
+            </div>
+            <div class="nav__item">
+              <a href="#">
+                <span class="item__text">PORTFOLIO</span>
+              </a>
+              <ul class="dropdown__list">
+                <a href="#" class="dropdown__item"><span>Standard</span></a>
+                <a href="#" class="dropdown__item"><span>Gallery</span></a>
+                <a href="#" class="dropdown__item"><span>Masonry</span></a>
+                <a href="#" class="dropdown__item"><span>Masonry Wide</span></a>
+                <div class="sublist layouts">
+                  <a href="#" class="dropdown__item">
+                    <span>Layouts</span>
+                    <i class="fa-solid fa-angle-right"></i>
+                  </a>
+                  <ul class="sublistbox layouts__list">
+                    <a href="#" class="dropdown__item"><span>2 Columns</span></a>
+                    <a href="#" class="dropdown__item"><span>3 Columns</span></a>
+                    <a href="#" class="dropdown__item"><span>3 Columns Wide</span></a>
+                    <a href="#" class="dropdown__item"><span>4 Columns</span></a>
+                    <a href="#" class="dropdown__item"><span>4 Columns Wide</span></a>
+                    <a href="#" class="dropdown__item"><span>5 Columns Wide</span></a>
+                  </ul>
+                </div>
+                <div class="sublist single">
+                  <a href="#" class="dropdown__item">
+                    <span>Single</span>
+                    <i class="fa-solid fa-angle-right"></i>
+                  </a>
+                  <ul class="sublistbox single__list">
+                    <a href="#" class="dropdown__item"><span>Small Gallery</span></a>
+                    <a href="#" class="dropdown__item"><span>Big Gallery</span></a>
+                    <a href="#" class="dropdown__item"><span>Small Slider</span></a>
+                    <a href="#" class="dropdown__item"><span>Big Slider</span></a>
+                    <a href="#" class="dropdown__item"><span>Small Images</span></a>
+                    <a href="#" class="dropdown__item"><span>Big Images</span></a>
+                  </ul>
+                </div>
+              </ul>
+            </div>
+            <div class="nav__item">
+              <a href="#">
+                <span class="item__text">BLOG</span>
+              </a>
+              <ul class="dropdown__list">
+                <a href="#" class="dropdown__item"><span>Right Sidebar</span></a>
+                <a href="#" class="dropdown__item"><span>Left Sidebar</span></a>
+                <a href="#" class="dropdown__item"><span>No Sidebar</span></a>
+                <a href="#" class="dropdown__item"><span>Masonry</span></a>
+                <div class="sublist posttypes">
+                  <a href="#" class="dropdown__item">
+                    <i class="fa-solid fa-angle-left"></i>
+                    <span>Post Types</span>
+                  </a>
+                  <ul class="sublistbox posttypes__list">
+                    <a href="#" class="dropdown__item"><span>Standard Post</span></a>
+                    <a href="#" class="dropdown__item"><span>Quote Post</span></a>
+                    <a href="#" class="dropdown__item"><span>Link Post</span></a>
+                    <a href="#" class="dropdown__item"><span>Gallery Post</span></a>
+                    <a href="#" class="dropdown__item"><span>Video Post</span></a>
+                    <a href="#" class="dropdown__item"><span>Audio Post</span></a>
+                  </ul>
+                </div>
+              </ul>
+            </div>
+            <div class="nav__item">
+              <a href="#">
+                <span class="item__text">SHOP</span>
+              </a>
+              <ul class="dropdown__list">
+                <a href="#" class="dropdown__item"><span>Product List</span></a>
+                <a href="#" class="dropdown__item"><span>Single Product</span></a>
+                <a href="#" class="dropdown__item"><span>Layouts</span></a>
+                <div class="sublist layouts">
+                  <a href="#" class="dropdown__item">
+                    <i class="fa-solid fa-angle-left"></i>
+                    <span>Layouts</span>
+                  </a>
+                  <ul class="sublistbox layouts__list">
+                    <a href="#" class="dropdown__item"><span>Three Columns</span></a>
+                    <a href="#" class="dropdown__item"><span>Four Columns</span></a>
+                    <a href="#" class="dropdown__item"><span>Four Columns Wide</span></a>
+                    <a href="#" class="dropdown__item"><span>Five Columns Wide</span></a>
+                  </ul>
+                </div>
+                <div class="sublist shoppages">
+                  <a href="#" class="dropdown__item">
+                    <i class="fa-solid fa-angle-left"></i>
+                    <span>Shop Pages</span>
+                  </a>
+                  <ul class="sublistbox shoppages__list">
+                    <a href="#" class="dropdown__item"><span>My Account</span></a>
+                    <a href="#" class="dropdown__item"><span>Cart</span></a>
+                    <a href="#" class="dropdown__item"><span>Checkout</span></a>
+                  </ul>
+                </div>
+              </ul>
+            </div>
+            <div class="nav__item">
+              <a href="#">
+                <span class="item__text">ELEMENTS</span>
+              </a>
+              <ul class="dropdown__list ddlist--bigtab">
+                <div class="presentation__col dropdown__col">
+                  <span class="col__title">PRESENTATION</span>
+                  <a href="#" class="dropdown__item"><span>Parallax Section</span></a>
+                  <a href="#" class="dropdown__item"><span>Single Image</span></a>
+                  <a href="#" class="dropdown__item"><span>Product Showcase</span></a>
+                  <a href="#" class="dropdown__item"><span>Floating Images</span></a>
+                  <a href="#" class="dropdown__item"><span>Team</span></a>
+                  <a href="#" class="dropdown__item"><span>Triple Frame Highlight</span></a>
+                  <a href="#" class="dropdown__item"><span>Video Button</span></a>
+                  <a href="#" class="dropdown__item"><span>Split Slider</span></a>
+                </div>
+                <div class="classic__col dropdown__col">
+                  <span class="col__title">CLASSIC</span>
+                  <a href="#" class="dropdown__item"><span>Accordions</span></a>
+                  <a href="#" class="dropdown__item"><span>Tabs</span></a>
+                  <a href="#" class="dropdown__item"><span>Clients</span></a>
+                  <a href="#" class="dropdown__item"><span>Buttons</span></a>
+                  <a href="#" class="dropdown__item"><span>Icon With Text</span></a>
+                  <a href="#" class="dropdown__item"><span>Icon List Item</span></a>
+                  <a href="#" class="dropdown__item"><span>Progress Bar</span></a>
+                  <a href="#" class="dropdown__item"><span>Contact Form</span></a>
+                </div>
+                <div class="typography__col dropdown__col">
+                  <span class="col__title">TYPOGRAPHY</span>
+                  <a href="#" class="dropdown__item"><span>Blockquote</span></a>
+                  <a href="#" class="dropdown__item"><span>Columns</span></a>
+                  <a href="#" class="dropdown__item"><span>Headings</span></a>
+                  <a href="#" class="dropdown__item"><span>Custom Font</span></a>
+                  <a href="#" class="dropdown__item"><span>Dropcaps & Highlights</span></a>
+                  <a href="#" class="dropdown__item"><span>Section Title</span></a>
+                  <a href="#" class="dropdown__item"><span>Separators</span></a>
+                  <a href="#" class="dropdown__item"><span>Testmonials</span></a>
+                </div>
+                <div class="infographic__col dropdown__col">
+                  <span class="col__title">INFOGRAPHIC</span>
+                  <a href="#" class="dropdown__item"><span>Comparison Pricing</span></a>
+                  <a href="#" class="dropdown__item"><span>Pie Chart</span></a>
+                  <a href="#" class="dropdown__item"><span>Pricing Tables</span></a>
+                  <a href="#" class="dropdown__item"><span>Google Maps</span></a>
+                  <a href="#" class="dropdown__item"><span>Countdown</span></a>
+                  <a href="#" class="dropdown__item"><span>Counters</span></a>
+                  <a href="#" class="dropdown__item"><span>Portfolio List</span></a>
+                  <a href="#" class="dropdown__item"><span>Blog List</span></a>
+                  <a href="#" class="dropdown__item"><span>Shop List</span></a>
+                </div>
+              </ul>
+            </div>
+            <div class="nav__icon search">
+              <button type="button" class="icon__wrapper" id="show-searchbar__btn-sticky">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+            </div>
+            <div class="nav__icon menu">
+              <button type="button" class="icon__wrapper" id="show-sidebar__btn-sticky">
+                <i class="fa-solid fa-bars"></i>
+              </button>
+              <div class="menu__detail"></div>
+            </div>
           </div>
         </div>
+        <!--  -->
       </div>
     </header>
     <!--  -->
@@ -392,9 +607,9 @@
               </div>
               <div class="dot__container">
                 <div class="dot__wrapper">
-                  <button class="dot-btn" data-id="rose-product" cellIndex="0"></button>
-                  <button class="dot-btn" data-id="purple-product" cellIndex="1"></button>
-                  <button class="dot-btn" data-id="blue-product" cellIndex="2"></button>
+                  <button type="button" class="dot-btn" data-id="rose-product" cellIndex="0"></button>
+                  <button type="button" class="dot-btn" data-id="purple-product" cellIndex="1"></button>
+                  <button type="button" class="dot-btn" data-id="blue-product" cellIndex="2"></button>
                 </div>
               </div>
             </div>
@@ -460,7 +675,7 @@
       <!-- VIDEO -->
       <section class="video">
         <div class="videoanchor__wrapper">
-          <a href="https://vimeo.com/190660027" class="video__anchor">
+          <button type="button" class="video__anchor">
             <img
               src="https://foton.qodeinteractive.com/wp-content/uploads/2018/06/video-button-img-1.jpg"
               alt="thumbnail" />
@@ -469,13 +684,18 @@
                 src="https://foton.qodeinteractive.com/wp-content/uploads/2018/06/Untitled-video-button-img-2.png"
                 alt="Play button" />
             </span>
-          </a>
+          </button>
         </div>
-        <div class="video__view">
+        <div class="video__container">
           <div class="video__wrapper">
-            <video width="320" height="240" controls>
-              <source type="video/mp4" src="https://player.vimeo.com/external/*.hd.mp4?s=*&profile_id=*" />
-            </video>
+            <iframe
+              id="video__iframe"
+              src="https://player.vimeo.com/video/190660027?h=6f08039265"
+              width="960"
+              height="540"
+              frameborder="0"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowfullscreen></iframe>
           </div>
         </div>
       </section>
