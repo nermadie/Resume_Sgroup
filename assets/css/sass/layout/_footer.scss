@@ -1,7 +1,7 @@
 @use "../global/colors" as color;
 @use "../utils" as u;
 .info__container {
-  height: u.rem(465);
+  height: auto;
   background-color: color.$indigo-footer;
   @include u.flexAlignJustify(stretch, center);
   .info__wrapper {

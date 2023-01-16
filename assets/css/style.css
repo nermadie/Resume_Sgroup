@@ -1084,7 +1084,7 @@ button {
 }
 @media screen and (max-width: 64rem) {
   .bot__wrapper {
-    height: 50rem;
+    height: auto;
     flex-wrap: wrap;
     flex-grow: 1;
   }
@@ -1266,6 +1266,7 @@ button {
 @media screen and (max-width: 64rem) {
   .newtech__wrapper {
     display: block;
+    height: auto;
   }
   .newtech__wrapper .newtech-img__container {
     display: flex;
@@ -1283,7 +1284,7 @@ button {
     width: 100%;
   }
   .newtech__wrapper .text__wrapper .newtech-cert__wrapper p {
-    padding-right: 12.5rem;
+    padding-right: 30%;
   }
 }
 
@@ -1878,7 +1879,7 @@ button {
   }
 }
 .info__container {
-  height: 29.0625rem;
+  height: auto;
   background-color: #292933;
   display: flex;
   align-items: stretch;

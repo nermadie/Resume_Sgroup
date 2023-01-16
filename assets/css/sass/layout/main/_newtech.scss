@@ -66,6 +66,7 @@
   }
   @include u.breakpoint("medium") {
     display: block;
+    height: auto;
     .newtech-img__container {
       @include u.flexAlignJustify(center, center);
       width: 100%;
@@ -80,7 +81,7 @@
       width: 100%;
       .newtech-cert__wrapper {
         p {
-          padding-right: u.rem(200);
+          padding-right: 30%;
         }
       }
     }

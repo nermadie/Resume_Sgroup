@@ -419,7 +419,7 @@
     }
   }
   @include u.breakpoint(medium) {
-    height: u.rem(800);
+    height: auto;
     flex-wrap: wrap;
     flex-grow: 1;
     .detailbox {
