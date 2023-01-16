@@ -7,7 +7,7 @@
   position: absolute;
   z-index: 999;
   background-color: color.$white-searchbar;
-  padding: u.rem(40) u.rem(100);
+  padding: 0 u.rem(100);
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s ease;

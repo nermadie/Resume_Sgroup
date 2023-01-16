@@ -4,12 +4,23 @@
   @include u.flexAlignJustify(center, center);
   .video__anchor {
     position: relative;
+    width: clamp(330px, 75%, 1300px);
+    .video__anchor-img {
+      width: 100%;
+      height: auto;
+    }
     span {
       img {
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+      }
+    }
+  }
+  @include u.breakpoint("medium") {
+    .video__anchor {
+      span {
       }
     }
   }
