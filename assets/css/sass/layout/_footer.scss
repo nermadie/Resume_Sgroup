@@ -159,6 +159,13 @@
       }
     }
   }
+  @include u.breakpoint("medium") {
+    .info__wrapper {
+      padding: 0 u.rem(100);
+      grid-template-columns: 1fr 1fr;
+      gap: u.rem(40);
+    }
+  }
 }
 .copyright__container {
   height: u.rem(80);

@@ -1676,6 +1676,65 @@ button {
   align-items: center;
   justify-content: center;
 }
+@media screen and (max-width: 64rem) {
+  .lazybot__wrapper .topgrid__section .topgrid__wrapper {
+    height: 68.75rem;
+  }
+  .lazybot__wrapper .topgrid__section .topgrid__wrapper .grid__wrapper {
+    margin-top: 9.375rem;
+    width: 100%;
+    grid-template-columns: 100%;
+    gap: 0;
+    padding: 0 5.875rem;
+  }
+  .lazybot__wrapper .topgrid__section .topgrid__wrapper .grid__wrapper .griditem__wrapper {
+    width: 100%;
+    height: 8.75rem;
+    padding: 1.875rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .lazybot__wrapper .topgrid__section .topgrid__wrapper .grid__wrapper .griditem__wrapper .img__wrapper {
+    width: 3.4375rem;
+    height: 100%;
+    position: relative;
+  }
+  .lazybot__wrapper .topgrid__section .topgrid__wrapper .grid__wrapper .griditem__wrapper .img__wrapper img {
+    position: absolute;
+    top: 0;
+    transition: all 0.3s ease;
+  }
+  .lazybot__wrapper .topgrid__section .topgrid__wrapper .grid__wrapper .griditem__wrapper .img__wrapper img:nth-child(2) {
+    opacity: 0;
+    visibility: 0;
+  }
+  .lazybot__wrapper .topgrid__section .topgrid__wrapper .grid__wrapper .griditem__wrapper .text__wrapper {
+    width: 100%;
+    padding: 1rem 0 0 1.5625rem;
+  }
+  .lazybot__wrapper .topgrid__section .topgrid__wrapper .grid__wrapper .griditem__wrapper .text__wrapper span {
+    font-size: 1.3125rem;
+    font-weight: 500;
+    line-height: 2rem;
+    font-family: "Poppins", sans-serif;
+    display: block;
+    color: #58468c;
+  }
+  .lazybot__wrapper .topgrid__section .topgrid__wrapper .grid__wrapper .griditem__wrapper .text__wrapper p {
+    display: block;
+    margin: 0.5625rem 0;
+    line-height: 1.75rem;
+  }
+  .lazybot__wrapper .topgrid__section .topgrid__wrapper .grid__wrapper .griditem__wrapper:hover .img__wrapper img:nth-child(1) {
+    opacity: 0;
+    visibility: 0;
+  }
+  .lazybot__wrapper .topgrid__section .topgrid__wrapper .grid__wrapper .griditem__wrapper:hover .img__wrapper img:nth-child(2) {
+    opacity: 1;
+    visibility: 1;
+  }
+}
 
 .button {
   height: 3rem;
@@ -1987,6 +2046,13 @@ button {
 }
 .info__container .info__wrapper .part4 .content__wrapper .link__wrapper a:first-child {
   margin-right: 0.625rem;
+}
+@media screen and (max-width: 64rem) {
+  .info__container .info__wrapper {
+    padding: 0 6.25rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+  }
 }
 
 .copyright__container {
