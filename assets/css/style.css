@@ -80,19 +80,21 @@ button {
   z-index: 997;
   position: relative;
 }
-.header__wrapper .logo__wrapper {
-  width: 6.5rem;
+.header__wrapper .logo__conatainer .logo__wrapper {
   height: auto;
   -o-object-fit: cover;
      object-fit: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.header__wrapper .logo__wrapper a {
+.header__wrapper .logo__conatainer .logo__wrapper a {
   display: flex;
   align-items: center;
   justify-content: flex-start;
 }
-.header__wrapper .logo__wrapper a img {
-  width: 100%;
+.header__wrapper .logo__conatainer .logo__wrapper a img {
+  width: 6.5rem;
   height: auto;
   -o-object-fit: cover;
      object-fit: cover;
@@ -397,6 +399,67 @@ button {
 .header__wrapper .navbar-sticky__wrapper .navbar__wrapper .nav__icon:hover.menu .icon__wrapper {
   background-color: #ff8a73;
 }
+@media screen and (max-width: 64rem) {
+  .header__wrapper .navbar-top__wrapper {
+    height: 4.375rem;
+    background-color: #fff;
+    display: block;
+    position: fixed;
+    padding: 0;
+    transition: all 0.5s ease;
+  }
+  .header__wrapper .navbar-top__wrapper .logo__conatainer {
+    height: 100%;
+    width: 100%;
+    padding: 0 10%;
+  }
+  .header__wrapper .navbar-top__wrapper .logo__conatainer .logo__wrapper {
+    height: 100%;
+    width: 100%;
+    position: relative;
+  }
+  .header__wrapper .navbar-top__wrapper .logo__conatainer .logo__wrapper .menu-toggle__btn {
+    font-size: 1.25rem;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    transition: all 0.2s ease;
+  }
+  .header__wrapper .navbar-top__wrapper .logo__conatainer .logo__wrapper .menu-toggle__btn:hover {
+    color: #ff8a73;
+  }
+  .header__wrapper .navbar-top__wrapper .logo__conatainer .logo__wrapper img {
+    height: 1.625rem;
+    content: url("https://foton.qodeinteractive.com/wp-content/uploads/2018/07/logo1.png");
+  }
+  .header__wrapper .navbar-top__wrapper .navbar__wrapper {
+    background-color: #fff;
+    display: block;
+    position: absolute;
+    height: 0;
+    width: 100%;
+    padding: 0 10%;
+    transition: all 0.3s ease;
+    overflow: hidden;
+  }
+  .header__wrapper .navbar-top__wrapper .navbar__wrapper .nav__item {
+    height: 3.125rem;
+    padding: 0;
+  }
+  .header__wrapper .navbar-top__wrapper .navbar__wrapper .nav__item .item__text {
+    color: #716e86;
+  }
+  .header__wrapper .navbar-top__wrapper .navbar__wrapper .nav__icon {
+    display: none;
+  }
+  .header__wrapper .navbar-top__wrapper .navbar__wrapper.active {
+    height: 18.75rem;
+  }
+  .header__wrapper .navbar-sticky__wrapper {
+    display: none;
+  }
+}
 
 .nav__item:nth-child(1) .dropdown__list {
   left: -1.25rem;
@@ -531,9 +594,10 @@ button {
   opacity: 0;
   visibility: hidden;
   position: absolute;
-  top: 5%;
+  bottom: -30%;
   right: 8%;
   z-index: 2;
+  width: clamp(420px, 50%, 920px);
 }
 .top__wrapper.trigger--animation h1 {
   -webkit-animation: textAnimationIntro 0.8s ease 1s 1 forwards;
@@ -550,6 +614,54 @@ button {
 .top__wrapper.trigger--animation .product__preview {
   -webkit-animation: imgAnimationIntro 0.5s ease-in 1.4s 1 forwards;
           animation: imgAnimationIntro 0.5s ease-in 1.4s 1 forwards;
+}
+@media screen and (max-width: 64rem) {
+  .top__wrapper {
+    height: 46rem;
+    padding: 0;
+  }
+  .top__wrapper h1 {
+    padding: 8rem 0 1rem 0;
+    font-size: 2.125rem;
+    text-align: center;
+    line-height: 2.8125rem;
+  }
+  .top__wrapper .text__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .top__wrapper .text__wrapper p {
+    display: block;
+    width: 24.5rem;
+    font-size: 1.125rem;
+    text-align: center;
+    line-height: 1.875rem;
+  }
+  .top__wrapper .button__wrapper {
+    opacity: 0;
+    visibility: hidden;
+    margin-top: 2.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .top__wrapper .product__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding-top: 5rem;
+  }
+  .top__wrapper .product__wrapper .product__preview {
+    opacity: 0;
+    visibility: hidden;
+    position: relative;
+    width: 26.125rem;
+    height: 22.5625rem;
+    top: 50%;
+    left: 0;
+  }
 }
 
 @-webkit-keyframes textAnimationIntro {
@@ -618,17 +730,11 @@ button {
   z-index: 3;
   pointer-events: none;
   background-repeat: no-repeat;
-  background-size: 153% 130px;
+  background-size: 145% calc(2vw + 400px);
   background-position: 50% 100%;
   background-image: url('data:image/svg+xml;charset=utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35.28 2.17" preserveAspectRatio="none"><path d="M35.28 1.16c-3.17-.8-7.3.4-10.04.56-2.76.17-9.25-1.47-12.68-1.3-3.42.16-4.64.84-7.04.86C3.12 1.31 0 .4 0 .4v1.77h35.28z" fill="%23ffffff"/></svg>');
 }
-@media (min-width: 30rem) {
-  .mid__wrapper .shapedividers::before {
-    background-size: 155% 238px;
-    background-position: 50% 100%;
-  }
-}
-@media (min-width: 64rem) {
+@media screen and (max-width: 75rem) {
   .mid__wrapper .shapedividers::before {
     bottom: -0.1vw;
     left: -0.1vw;
@@ -638,9 +744,16 @@ button {
     background-position: 50% 100%;
   }
 }
-@media (min-width: 75rem) {
+@media screen and (max-width: 64rem) {
   .mid__wrapper .shapedividers::before {
-    background-size: 145% calc(2vw + 400px);
+    background-size: 155% 150px;
+    background-position: 50% 100%;
+  }
+}
+@media screen and (max-width: 30rem) {
+  .mid__wrapper .shapedividers::before {
+    background-size: 155% 100px;
+    background-position: 50% 100%;
   }
 }
 .mid__wrapper .shapedividers .inspires__wrapper {
@@ -652,6 +765,8 @@ button {
   justify-content: flex-start;
 }
 .mid__wrapper .shapedividers .inspires__wrapper span {
+  display: inline-block;
+  width: 23.125rem;
   font-size: 1.375rem;
   font-weight: 500;
   font-family: "Poppins", sans-serif;
@@ -661,6 +776,23 @@ button {
 .mid__wrapper .shapedividers .inspires__wrapper.trigger--animation {
   -webkit-animation: inspiresAnimation 0.8s ease 1s 1 forwards;
           animation: inspiresAnimation 0.8s ease 1s 1 forwards;
+}
+@media screen and (max-width: 64rem) {
+  .mid__wrapper .shapedividers .inspires__wrapper {
+    padding-top: 6.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+  }
+  .mid__wrapper .shapedividers .inspires__wrapper img {
+    height: 4.1875rem;
+    width: 4.75rem;
+  }
+  .mid__wrapper .shapedividers .inspires__wrapper span {
+    width: 17.125rem;
+    font-size: 1.25rem;
+  }
 }
 .mid__wrapper .shapedividers .detailzone__wrapper {
   width: 100%;
@@ -696,6 +828,23 @@ button {
   font-weight: 300;
   line-height: 2rem;
 }
+@media screen and (max-width: 64rem) {
+  .mid__wrapper .shapedividers .detailzone__wrapper {
+    flex-direction: column;
+  }
+  .mid__wrapper .shapedividers .detailzone__wrapper .zonetitle__wrapper {
+    width: 100%;
+    border: none;
+    padding: 4rem 0;
+  }
+  .mid__wrapper .shapedividers .detailzone__wrapper .zonetitle__wrapper span {
+    padding: 0 5%;
+  }
+  .mid__wrapper .shapedividers .detailzone__wrapper .zonedescription__wrapper {
+    width: 100%;
+    padding: 0 5% 0 10%;
+  }
+}
 .mid__wrapper .shapedividers .slider__container {
   height: 30rem;
   width: 100%;
@@ -703,7 +852,7 @@ button {
 }
 .mid__wrapper .shapedividers .slider__container .slider__wrapper {
   width: 100%;
-  height: 100%;
+  height: 60%;
   position: relative;
   display: flex;
   align-items: center;
@@ -712,34 +861,35 @@ button {
 .mid__wrapper .shapedividers .slider__container .slider__wrapper .product__wrapper {
   position: absolute;
   overflow: hidden;
+  width: 100%;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 1rem;
   z-index: 4;
-  transition: all 1s ease;
 }
 .mid__wrapper .shapedividers .slider__container .slider__wrapper .product__wrapper img {
   opacity: 0;
   visibility: hidden;
-  height: 25.75rem;
+  width: clamp(90px, 25%, 412px);
+  transition: all 0.3s ease;
+}
+.mid__wrapper .shapedividers .slider__container .slider__wrapper .product__wrapper.active img {
+  opacity: 1;
+  visibility: visible;
 }
 .mid__wrapper .shapedividers .slider__container .slider__wrapper .product__wrapper.active img:nth-child(1) {
-  -webkit-animation: sliderAnimation 0.5s ease-in 0s 1 forwards;
-          animation: sliderAnimation 0.5s ease-in 0s 1 forwards;
+  -webkit-animation: sliderAnimationImage1 0.6s cubic-bezier(0.65, -0.01, 0.54, 1.03);
+          animation: sliderAnimationImage1 0.6s cubic-bezier(0.65, -0.01, 0.54, 1.03);
 }
 .mid__wrapper .shapedividers .slider__container .slider__wrapper .product__wrapper.active img:nth-child(2) {
-  -webkit-animation: sliderAnimation 0.5s ease-in 0.2s 1 forwards;
-          animation: sliderAnimation 0.5s ease-in 0.2s 1 forwards;
+  -webkit-animation: sliderAnimationImage2 0.8s cubic-bezier(0.65, -0.01, 0.54, 1.03);
+          animation: sliderAnimationImage2 0.8s cubic-bezier(0.65, -0.01, 0.54, 1.03);
 }
 .mid__wrapper .shapedividers .slider__container .slider__wrapper .product__wrapper.active img:nth-child(3) {
-  -webkit-animation: sliderAnimation 0.5s ease-in 0.4s 1 forwards;
-          animation: sliderAnimation 0.5s ease-in 0.4s 1 forwards;
-}
-.mid__wrapper .shapedividers .slider__container .slider__wrapper .product__wrapper.disappear img {
-  -webkit-animation: sliderAnimation 0.5s ease-in 0s 1 forwards, smoothDisappearAnimation 0.5s ease 0s 1 forwards;
-          animation: sliderAnimation 0.5s ease-in 0s 1 forwards, smoothDisappearAnimation 0.5s ease 0s 1 forwards;
+  -webkit-animation: sliderAnimationImage3 1s cubic-bezier(0.65, -0.01, 0.54, 1.03);
+          animation: sliderAnimationImage3 1s cubic-bezier(0.65, -0.01, 0.54, 1.03);
 }
 .mid__wrapper .shapedividers .slider__container .dot__container {
   position: relative;
@@ -770,6 +920,11 @@ button {
 .mid__wrapper .shapedividers .slider__container .dot__container .dot__wrapper .dot-btn:nth-child(3) {
   background-color: #5580ff;
 }
+@media screen and (max-width: 64rem) {
+  .mid__wrapper .shapedividers .slider__container {
+    height: clamp(250px, 60vw, 800px);
+  }
+}
 
 @-webkit-keyframes inspiresAnimation {
   from {
@@ -796,52 +951,76 @@ button {
     visibility: visible;
   }
 }
-@-webkit-keyframes sliderAnimation {
-  from {
-    transform: translateX(30%);
+@-webkit-keyframes sliderAnimationImage1 {
+  0%, 16% {
+    transform: translateX(40%);
     opacity: 0;
     visibility: hidden;
   }
-  to {
+  100% {
     transform: translateX(0);
     opacity: 1;
     visibility: visible;
   }
 }
-@keyframes sliderAnimation {
-  from {
-    transform: translateX(30%);
+@keyframes sliderAnimationImage1 {
+  0%, 16% {
+    transform: translateX(40%);
     opacity: 0;
     visibility: hidden;
   }
-  to {
+  100% {
     transform: translateX(0);
     opacity: 1;
     visibility: visible;
   }
 }
-@-webkit-keyframes smoothDisappearAnimation {
-  from {
+@-webkit-keyframes sliderAnimationImage2 {
+  0%, 37.5% {
+    transform: translateX(40%);
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
     transform: translateX(0);
     opacity: 1;
     visibility: visible;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 0;
-    visibility: hidden;
   }
 }
-@keyframes smoothDisappearAnimation {
-  from {
+@keyframes sliderAnimationImage2 {
+  0%, 37.5% {
+    transform: translateX(40%);
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
     transform: translateX(0);
     opacity: 1;
     visibility: visible;
   }
-  to {
-    transform: translateX(0);
+}
+@-webkit-keyframes sliderAnimationImage3 {
+  0%, 50% {
+    transform: translateX(40%);
     opacity: 0;
     visibility: hidden;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+  }
+}
+@keyframes sliderAnimationImage3 {
+  0%, 50% {
+    transform: translateX(40%);
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
   }
 }
 .bot__wrapper {
@@ -902,6 +1081,30 @@ button {
   opacity: 1;
   visibility: visible;
 }
+@media screen and (max-width: 64rem) {
+  .bot__wrapper {
+    height: 50rem;
+    width: 400px;
+    flex-wrap: wrap;
+  }
+  .bot__wrapper .detailbox {
+    width: 100%;
+    padding: 0;
+  }
+  .bot__wrapper .detailbox .img__wrapper {
+    height: 5rem;
+  }
+  .bot__wrapper .detailbox .text__wrapper {
+    padding: 1.875rem 0 1.25rem;
+  }
+  .bot__wrapper .detailbox .text__wrapper span {
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+  }
+  .bot__wrapper .detailbox .text__wrapper p {
+    margin: 0.4375rem 0;
+  }
+}
 
 .videoanchor__wrapper {
   display: flex;
@@ -929,6 +1132,7 @@ button {
   transition: all 0.5s ease-in-out;
 }
 .video__container .video__wrapper {
+  transition: all 0.5s ease-in-out;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -936,11 +1140,74 @@ button {
   height: 100%;
   background-color: rgba(87, 70, 140, 0.7529411765);
 }
+.video__container .video__wrapper .preload__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s ease-in-out;
+}
+.video__container .video__wrapper .preload__wrapper .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.685);
+  -webkit-animation: videoLoadingAnimation 0.5s infinite;
+          animation: videoLoadingAnimation 0.5s infinite;
+}
+.video__container .video__wrapper iframe {
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s ease-in-out;
+}
 .video__container.active {
   opacity: 1;
   visibility: visible;
 }
+.video__container.active .preload__wrapper {
+  opacity: 1;
+  visibility: visible;
+}
+.video__container.active iframe {
+  display: inline-block;
+}
+.video__container.after-preloading .video__wrapper .preload__wrapper {
+  opacity: 0;
+  visibility: hidden;
+}
+.video__container.after-preloading .video__wrapper iframe {
+  opacity: 1;
+  visibility: visible;
+}
 
+@-webkit-keyframes videoLoadingAnimation {
+  0% {
+    transform: scale(1);
+  }
+  20% {
+    transform: scale(2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes videoLoadingAnimation {
+  0% {
+    transform: scale(1);
+  }
+  20% {
+    transform: scale(2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 .newtech__wrapper {
   width: 100%;
   height: 45.25rem;
@@ -1345,7 +1612,7 @@ button {
 .button {
   height: 3rem;
   width: 10.625rem;
-  margin-right: 1rem;
+  margin: 0 0.5rem;
   border-radius: 2rem;
   display: flex;
   align-items: center;

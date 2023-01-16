@@ -42,7 +42,7 @@ showSideBarBtnSticky.addEventListener("click", function () {
 });
 //=================================//
 //SLIDER
-const productWrappers = document.querySelectorAll(".product__wrapper");
+const productWrappers = document.querySelectorAll(".slider__wrapper .product__wrapper");
 const dotWrapper = document.querySelector(".dot__wrapper");
 const TIME_OUT = 5000;
 let sliderIndex = 0;
@@ -73,17 +73,9 @@ function updateSlider() {
 }
 function showSlide() {
   productWrappers.forEach(wrapper => {
-    if (wrapper.classList.contains("disappear")) {
-      wrapper.classList.remove("disappear");
-    }
-    else if (wrapper.classList.contains("active")) {
-      wrapper.classList.add("disappear");
-      wrapper.classList.remove("active");
-    }
+    wrapper.classList.remove("active");
   });
   productWrappers[sliderIndex].classList.add("active");
-  productWrappers.forEach(wrapper => { console.log(wrapper.classList); });
-  console.log(sliderIndex);
 }
 //=================================//
 //VIDEO
@@ -92,15 +84,16 @@ const videoContainer = document.querySelector(".video__container");
 const videoWrapper = document.querySelector(".video__wrapper");
 const video__iframe = document.querySelector("#video__iframe");
 
-video__iframe.onload = () => {
-  
-};
 
 videoAnchor.addEventListener("click", function () {
   videoContainer.classList.add("active");
 });
+video__iframe.addEventListener("load", function () {
+  videoContainer.classList.add("after-preloading");
+});
 videoWrapper.addEventListener("click", function (e) {
   videoContainer.classList.remove("active");
+  videoContainer.classList.remove("after-preloading");
   video__iframe.src = video__iframe.src;
   e.stopImmediatePropagation();
 });
@@ -202,7 +195,6 @@ const backToTopButton = document.querySelector(".back-to-top__button");
 window.addEventListener('scroll', function () {
   const scrollHeight = window.pageYOffset;
   const header = document.querySelector(".navbar-sticky__wrapper");
-  const searchbar__container = document.querySelector(".search__bar");
   const botIntro = document.querySelector(".introduction .bot__wrapper");
   if (scrollHeight > botIntro.getBoundingClientRect().height) {
     header.classList.add('active');
@@ -251,26 +243,40 @@ let translateValue2 = 0;
 const floatingImageObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      console.log(entry.isIntersecting);
       window.addEventListener('scroll', makeImageFloating);
     } else {
-      console.log(entry.isIntersecting);
-      console.log("I am unstoppable");
       window.removeEventListener('scroll', makeImageFloating);
-    }
-    function makeImageFloating(event) {
-      event.stopImmediatePropagation();
-      let middleOfScreen = window.innerHeight / 2;
-      let middleOfElement = newTechWrapper.getBoundingClientRect().top + newTechWrapper.getBoundingClientRect().bottom / 2;
-      // console.log(middleOfScreen, middleOfElement);
-      translateValue1 = (middleOfElement - middleOfScreen) * 0.015;
-      translateValue2 = (middleOfElement - middleOfScreen) * 0.03;
-      // console.log(translateValue1, translateValue2);
-      newTechImage1.style.transform = `translateY(${translateValue1}px)`;
-      newTechImage2.style.transform = `translateY(${translateValue2}px)`;
     }
   });
 });
+let makeImageFloating = function (event) {
+  event.stopImmediatePropagation();
+  let middleOfScreen = window.innerHeight / 2;
+  let middleOfElement = newTechWrapper.getBoundingClientRect().top + newTechWrapper.getBoundingClientRect().bottom / 2;
+  translateValue1 = (middleOfElement - middleOfScreen) * 0.015;
+  translateValue2 = (middleOfElement - middleOfScreen) * 0.03;
+  newTechImage1.style.transform = `translateY(${translateValue1}px)`;
+  newTechImage2.style.transform = `translateY(${translateValue2}px)`;
+};
 
 floatingImageObserver.observe(newTechWrapper);
 //=================================//
+//NAVBAR - SMALL SCREEN
+const menuBtn = document.querySelector('.menu-toggle__btn');
+const navbarWrapper = document.querySelector('.navbar__wrapper');
+const navbarTopWrapper = document.querySelector('.navbar-top__wrapper');
+
+menuBtn.addEventListener('click', function () {
+  navbarWrapper.classList.toggle('active');
+});
+//scroll up to see the navbar
+let prevScrollPos = window.pageYOffset;
+window.onscroll = function () {
+  let currentScrollPos = window.pageYOffset;
+  if (prevScrollPos > currentScrollPos) {
+    navbarTopWrapper.style.top = "0";
+  } else {
+    navbarTopWrapper.style.top = "-70px";
+  }
+  prevScrollPos = currentScrollPos;
+}

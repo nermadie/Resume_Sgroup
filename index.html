@@ -116,10 +116,15 @@
       <div class="header__wrapper">
         <!-- NAVBAR TOP -->
         <div class="navbar-top__wrapper">
-          <div class="logo__wrapper">
-            <a href="#">
-              <img src="https://foton.qodeinteractive.com/wp-content/uploads/2018/07/logo2.png" alt="Logo" />
-            </a>
+          <div class="logo__conatainer">
+            <div class="logo__wrapper">
+              <button class="menu-toggle__btn">
+                <i class="fa-solid fa-bars"></i>
+              </button>
+              <a href="#">
+                <img src="https://foton.qodeinteractive.com/wp-content/uploads/2018/07/logo2.png" alt="Logo" />
+              </a>
+            </div>
           </div>
           <div class="navbar__wrapper">
             <div class="nav__item">
@@ -553,7 +558,9 @@
       <section class="introduction">
         <div class="top__wrapper">
           <h1>Pushing The Boundaries &<br />Setting New Standards</h1>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis iste eveniet vel.</p>
+          <div class="text__wrapper">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis iste eveniet vel.</p>
+          </div>
           <div class="button__wrapper">
             <a href="#" class="button readmore">
               <span>READ MORE</span>
@@ -562,10 +569,12 @@
               <span>CONTACT US</span>
             </a>
           </div>
-          <img
-            src="https://foton.qodeinteractive.com/wp-content/uploads/2018/06/Presentation-rev-img-2.png"
-            alt="Product Preview"
-            class="product__preview" />
+          <div class="product__wrapper">
+            <img
+              src="https://foton.qodeinteractive.com/wp-content/uploads/2018/06/Presentation-rev-img-2.png"
+              alt="Product Preview"
+              class="product__preview" />
+          </div>
         </div>
         <div class="mid__wrapper">
           <div class="shapedividers">
@@ -573,16 +582,17 @@
               <img
                 src="https://foton.qodeinteractive.com/wp-content/uploads/2018/07/product-presentation-gif-1.gif"
                 alt="wave" />
-              <span>Music that inspires you when<br />you're on the move</span>
+              <span>Music that inspires you when you're on the move</span>
             </div>
             <div class="detailzone__wrapper">
               <div class="zonetitle__wrapper">
-                <span>Get In The Zone With<br />Your Favorite Music</span>
+                <span>Get In The Zone With Your Favorite Music</span>
               </div>
               <div class="zonedescription__wrapper">
                 <p>
                   Proin non urna nec neque ultrices porttitor. Aenean laoreet massa eu leo hendrerit mollis. Praesent
-                  ferme ntum congue mollis. Nunc non viverra ura sed accum.
+                  ferme ntum congue mollis. Nunc non viverra ura sed accum. Lorem ipsum dolor sit amet consectetur
+                  adipisicing elit.
                 </p>
               </div>
             </div>
@@ -688,14 +698,22 @@
         </div>
         <div class="video__container">
           <div class="video__wrapper">
+            <!-- preload -->
+            <div class="preload__wrapper">
+              <div class="dot"></div>
+            </div>
+            <!--  -->
+            <!-- video -->
             <iframe
               id="video__iframe"
-              src="https://player.vimeo.com/video/190660027?h=6f08039265"
+              src="https://player.vimeo.com/video/190660027?h=6f08039265&autoplay=1"
               width="960"
               height="540"
+              loading="lazy"
               frameborder="0"
               allow="autoplay; fullscreen; picture-in-picture"
               allowfullscreen></iframe>
+            <!--  -->
           </div>
         </div>
       </section>

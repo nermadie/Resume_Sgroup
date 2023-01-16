@@ -6,16 +6,18 @@
   background-color: color.$black-navbar;
   z-index: 997;
   position: relative;
-  .logo__wrapper {
-    width: u.rem(104);
-    height: auto;
-    object-fit: cover;
-    a {
-      @include u.flexAlignJustify(center);
-      img {
-        width: 100%;
-        height: auto;
-        object-fit: cover;
+  .logo__conatainer {
+    .logo__wrapper {
+      height: auto;
+      object-fit: cover;
+      @include u.flexAlignJustify(center, center);
+      a {
+        @include u.flexAlignJustify(center);
+        img {
+          width: u.rem(104);
+          height: auto;
+          object-fit: cover;
+        }
       }
     }
   }
@@ -351,6 +353,68 @@
           }
         }
       }
+    }
+  }
+  @include u.breakpoint(medium) {
+    //CONTINUES
+    .navbar-top__wrapper {
+      height: u.rem(70);
+      background-color: color.$white-navbar;
+      display: block;
+      position: fixed;
+      padding: 0;
+      transition: all 0.5s ease;
+      .logo__conatainer {
+        height: 100%;
+        width: 100%;
+        padding: 0 10%;
+        .logo__wrapper {
+          height: 100%;
+          width: 100%;
+          position: relative;
+          .menu-toggle__btn {
+            font-size: u.rem(20);
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            transition: all 0.2s ease;
+            &:hover {
+              color: color.$rose-navbar;
+            }
+          }
+          img {
+            height: u.rem(26);
+            content: url("https://foton.qodeinteractive.com/wp-content/uploads/2018/07/logo1.png");
+          }
+        }
+      }
+      .navbar__wrapper {
+        background-color: color.$white-navbar;
+        display: block;
+        position: absolute;
+        height: 0;
+        width: 100%;
+        padding: 0 10%;
+        transition: all 0.3s ease;
+        overflow: hidden;
+        .nav__item {
+          height: u.rem(50);
+          padding: 0;
+          .item__text {
+            color: color.$indigo-navbar;
+          }
+        }
+        .nav__icon {
+          display: none;
+        }
+        &.active {
+          height: u.rem(300);
+        }
+      }
+    }
+    .navbar-sticky__wrapper {
+      display: none;
     }
   }
 }
