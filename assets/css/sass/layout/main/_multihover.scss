@@ -1,7 +1,7 @@
 @use "../../global/colors" as color;
 @use "../../utils" as u;
 .multihover__wrapper {
-  margin-top: 2rem;
+  margin-top: 5rem;
   display: grid;
   height: 54vw;
   grid-template-columns: 1fr 1fr 1fr;
@@ -127,5 +127,15 @@
     z-index: 3;
     // opacity: 0;
     // visibility: hidden;
+  }
+  @include u.breakpoint("small") {
+    height: 120vw;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+  @include u.breakpoint("x-small") {
+    height: 500vw;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
   }
 }

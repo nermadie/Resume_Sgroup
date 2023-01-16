@@ -118,9 +118,10 @@
             }
           }
           &.ddlist--bigtab {
+            position: fixed;
             @include u.flexAlignJustify(stretch, center);
             width: 100vw;
-            right: calc(100% - 331px);
+            left: 0;
             border-radius: 0;
             padding: u.rem(55) 0;
             .dropdown__col {

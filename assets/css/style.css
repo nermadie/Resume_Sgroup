@@ -202,11 +202,12 @@ button {
   opacity: 1;
 }
 .header__wrapper .navbar__wrapper .nav__item .dropdown__list.ddlist--bigtab {
+  position: fixed;
   display: flex;
   align-items: stretch;
   justify-content: center;
   width: 100vw;
-  right: calc(100% - 331px);
+  left: 0;
   border-radius: 0;
   padding: 3.4375rem 0;
 }
@@ -663,6 +664,24 @@ button {
     left: 0;
   }
 }
+@media screen and (max-width: 30rem) {
+  .top__wrapper h1 {
+    font-size: 1.75rem;
+  }
+  .top__wrapper .text__wrapper p {
+    display: none;
+  }
+  .top__wrapper .button__wrapper {
+    display: block;
+  }
+  .top__wrapper .button__wrapper .button__container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+}
 
 @-webkit-keyframes textAnimationIntro {
   from {
@@ -718,6 +737,7 @@ button {
   position: relative;
   width: 100%;
   height: 68.75rem;
+  margin-bottom: 6rem;
   background: linear-gradient(45deg, rgb(255, 255, 255) 0%, rgb(250, 231, 223) 41%, rgb(220, 199, 216) 78%, rgb(195, 179, 216) 100%);
 }
 .mid__wrapper .shapedividers::before {
@@ -750,7 +770,7 @@ button {
     background-position: 50% 100%;
   }
 }
-@media screen and (max-width: 30rem) {
+@media screen and (max-width: 47.375rem) {
   .mid__wrapper .shapedividers::before {
     background-size: 155% 100px;
     background-position: 50% 100%;
@@ -843,6 +863,35 @@ button {
   .mid__wrapper .shapedividers .detailzone__wrapper .zonedescription__wrapper {
     width: 100%;
     padding: 0 5% 0 10%;
+  }
+}
+@media screen and (max-width: 47.375rem) {
+  .mid__wrapper .shapedividers .detailzone__wrapper {
+    display: block;
+    padding-left: 5%;
+  }
+  .mid__wrapper .shapedividers .detailzone__wrapper .zonetitle__wrapper {
+    width: 27.3125rem;
+  }
+  .mid__wrapper .shapedividers .detailzone__wrapper .zonetitle__wrapper span {
+    font-size: 2.25rem;
+  }
+  .mid__wrapper .shapedividers .detailzone__wrapper .zonedescription__wrapper {
+    width: 90%;
+    padding: 0 2rem;
+  }
+}
+@media screen and (max-width: 42.5rem) {
+  .mid__wrapper .shapedividers .detailzone__wrapper .zonetitle__wrapper {
+    width: 27.3125rem;
+  }
+  .mid__wrapper .shapedividers .detailzone__wrapper .zonetitle__wrapper span {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+  .mid__wrapper .shapedividers .detailzone__wrapper .zonedescription__wrapper {
+    width: 90%;
+    padding: 0 2rem;
   }
 }
 .mid__wrapper .shapedividers .slider__container {
@@ -1029,7 +1078,8 @@ button {
   align-items: center;
   justify-content: center;
   gap: 2rem;
-  height: 35.625rem;
+  height: auto;
+  margin-bottom: 4rem;
 }
 .bot__wrapper .detailbox {
   width: clamp(15.625rem, 16%, 25rem);
@@ -1084,7 +1134,6 @@ button {
 }
 @media screen and (max-width: 64rem) {
   .bot__wrapper {
-    height: auto;
     flex-wrap: wrap;
     flex-grow: 1;
   }
@@ -1129,8 +1178,8 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background-color: rgba(87, 70, 140, 0.7529411765);
 }
 .video__container .video__wrapper .preload__wrapper {
@@ -1153,6 +1202,7 @@ button {
           animation: videoLoadingAnimation 0.5s infinite;
 }
 .video__container .video__wrapper iframe {
+  width: clamp(330px, 90%, 960px);
   display: none;
   opacity: 0;
   visibility: hidden;
@@ -1203,15 +1253,19 @@ button {
 }
 .newtech__wrapper {
   width: 100%;
-  height: 75rem;
+  height: auto;
   display: flex;
   align-items: stretch;
   justify-content: center;
+  flex-wrap: wrap;
   padding-top: 6.5625rem;
-  gap: 2rem;
+}
+.newtech__wrapper .newtech-img__container {
+  margin: 2rem 0;
 }
 .newtech__wrapper .newtech-img__container .img__wrapper {
   width: 39.6875rem;
+  height: auto;
   display: inline-block;
   position: relative;
   padding-top: 1.5625rem;
@@ -1275,7 +1329,7 @@ button {
     width: 100%;
   }
   .newtech__wrapper .newtech-img__container .img__wrapper {
-    height: 40.625rem;
+    height: auto;
   }
   .newtech__wrapper .newtech-img__container .img__wrapper img {
     width: 24rem;
@@ -1284,12 +1338,48 @@ button {
     width: 100%;
   }
   .newtech__wrapper .text__wrapper .newtech-cert__wrapper p {
-    padding-right: 30%;
+    padding-right: 10%;
+  }
+}
+@media screen and (max-width: 47.375rem) {
+  .newtech__wrapper .newtech-img__container .img__wrapper {
+    padding-left: 5%;
+  }
+  .newtech__wrapper .newtech-img__container .img__wrapper img {
+    width: 18.75rem;
+  }
+  .newtech__wrapper .newtech-img__container .img__wrapper img:nth-child(2) {
+    top: 5.625rem;
+    left: 16.875rem;
+  }
+  .newtech__wrapper .text__wrapper {
+    padding: 3.75rem;
+  }
+  .newtech__wrapper .text__wrapper .newtech__title h2 {
+    font-size: 2.25rem;
+  }
+}
+@media screen and (max-width: 42.5rem) {
+  .newtech__wrapper .newtech-img__container .img__wrapper {
+    padding-left: 15%;
+  }
+  .newtech__wrapper .newtech-img__container .img__wrapper img {
+    width: 12.5rem;
+  }
+  .newtech__wrapper .newtech-img__container .img__wrapper img:nth-child(2) {
+    top: 3.125rem;
+    left: calc(120px + 20vw);
+  }
+  .newtech__wrapper .text__wrapper {
+    padding: 3.75rem;
+  }
+  .newtech__wrapper .text__wrapper .newtech__title h2 {
+    font-size: 1.5rem;
   }
 }
 
 .multihover__wrapper {
-  margin-top: 2rem;
+  margin-top: 5rem;
   display: grid;
   height: 54vw;
   grid-template-columns: 1fr 1fr 1fr;
@@ -1395,6 +1485,20 @@ button {
   height: 100%;
   position: absolute;
   z-index: 3;
+}
+@media screen and (max-width: 47.375rem) {
+  .multihover__wrapper {
+    height: 120vw;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+}
+@media screen and (max-width: 42.5rem) {
+  .multihover__wrapper {
+    height: 500vw;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
 }
 
 .lazytop__wrapper {
@@ -1736,6 +1840,39 @@ button {
     visibility: 1;
   }
 }
+@media screen and (max-width: 47.375rem) {
+  .lazybot__wrapper .blurbackground__section .background--behind {
+    height: 37.5rem;
+  }
+  .lazybot__wrapper .blurbackground__section .background--behind .text__wrapper {
+    width: 31.25rem;
+    padding: 5%;
+  }
+  .lazybot__wrapper .blurbackground__section .background--behind .text__wrapper .title {
+    font-size: 2.8125rem;
+    line-height: 3.375rem;
+  }
+  .lazybot__wrapper .blurbackground__section .background--behind .text__wrapper .text {
+    font-size: 1.125rem;
+    line-height: 1.8125rem;
+  }
+}
+@media screen and (max-width: 42.5rem) {
+  .lazybot__wrapper .blurbackground__section .background--behind {
+    height: 37.5rem;
+  }
+  .lazybot__wrapper .blurbackground__section .background--behind .text__wrapper {
+    width: 31.25rem;
+  }
+  .lazybot__wrapper .blurbackground__section .background--behind .text__wrapper .title {
+    font-size: 2rem;
+    line-height: 3.375rem;
+  }
+  .lazybot__wrapper .blurbackground__section .background--behind .text__wrapper .text {
+    font-size: 1.125rem;
+    line-height: 1.8125rem;
+  }
+}
 
 .button {
   height: 3rem;
@@ -2052,6 +2189,13 @@ button {
   .info__container .info__wrapper {
     padding: 0 6.25rem;
     grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+  }
+}
+@media screen and (max-width: 42.5rem) {
+  .info__container .info__wrapper {
+    padding: 0 4.375rem;
+    grid-template-columns: 1fr;
     gap: 2.5rem;
   }
 }

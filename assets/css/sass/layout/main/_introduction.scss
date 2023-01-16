@@ -92,6 +92,24 @@
       }
     }
   }
+  @include u.breakpoint("xx-small") {
+    h1 {
+      font-size: u.rem(28);
+    }
+    .text__wrapper {
+      p {
+        display: none;
+      }
+    }
+    .button__wrapper {
+      display: block;
+      .button__container {
+        width: 100%;
+        @include u.flexAlignJustify(center, center);
+        margin-bottom: 1rem;
+      }
+    }
+  }
 }
 @keyframes textAnimationIntro {
   from {
@@ -123,6 +141,7 @@
     position: relative;
     width: 100%;
     height: u.rem(1100);
+    margin-bottom: 6rem;
     background: linear-gradient(
       45deg,
       rgba(255, 255, 255, 1) 0%,
@@ -221,7 +240,7 @@
           line-height: 2rem;
         }
       }
-      @include u.breakpoint(medium) {
+      @include u.breakpoint("medium") {
         flex-direction: column;
         .zonetitle__wrapper {
           width: 100%;
@@ -234,6 +253,33 @@
         .zonedescription__wrapper {
           width: 100%;
           padding: 0 5% 0 10%;
+        }
+      }
+      @include u.breakpoint("small") {
+        display: block;
+        padding-left: 5%;
+        .zonetitle__wrapper {
+          width: u.rem(437);
+          span {
+            font-size: u.rem(36);
+          }
+        }
+        .zonedescription__wrapper {
+          width: 90%;
+          padding: 0 2rem;
+        }
+      }
+      @include u.breakpoint("x-small") {
+        .zonetitle__wrapper {
+          width: u.rem(437);
+          span {
+            font-size: u.rem(24);
+            line-height: u.rem(32);
+          }
+        }
+        .zonedescription__wrapper {
+          width: 90%;
+          padding: 0 2rem;
         }
       }
     }
@@ -364,7 +410,8 @@
 .bot__wrapper {
   @include u.flexAlignJustify(center, center);
   gap: 2rem;
-  height: u.rem(570);
+  height: auto;
+  margin-bottom: 4rem;
   .detailbox {
     width: clamp(u.rem(250), 16%, u.rem(400));
     padding: u.rem(30) 0;
@@ -418,8 +465,7 @@
       }
     }
   }
-  @include u.breakpoint(medium) {
-    height: auto;
+  @include u.breakpoint("medium") {
     flex-wrap: wrap;
     flex-grow: 1;
     .detailbox {

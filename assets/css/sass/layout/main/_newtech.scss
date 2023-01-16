@@ -2,13 +2,15 @@
 @use "../../global/colors" as color;
 .newtech__wrapper {
   width: 100%;
-  height: u.rem(1200);
+  height: auto;
   @include u.flexAlignJustify(stretch, center);
+  flex-wrap: wrap;
   padding-top: u.rem(105);
-  gap: 2rem;
   .newtech-img__container {
+    margin: 2rem 0;
     .img__wrapper {
       width: u.rem(635);
+      height: auto;
       display: inline-block;
       position: relative;
       padding-top: u.rem(25);
@@ -71,7 +73,7 @@
       @include u.flexAlignJustify(center, center);
       width: 100%;
       .img__wrapper {
-        height: u.rem(650);
+        height: auto;
         img {
           width: u.rem(384);
         }
@@ -81,7 +83,51 @@
       width: 100%;
       .newtech-cert__wrapper {
         p {
-          padding-right: 30%;
+          padding-right: 10%;
+        }
+      }
+    }
+  }
+  @include u.breakpoint("small") {
+    .newtech-img__container {
+      .img__wrapper {
+        padding-left: 5%;
+        img {
+          width: u.rem(300);
+          &:nth-child(2) {
+            top: u.rem(90);
+            left: u.rem(270);
+          }
+        }
+      }
+    }
+    .text__wrapper {
+      padding: u.rem(60);
+      .newtech__title {
+        h2 {
+          font-size: u.rem(36);
+        }
+      }
+    }
+  }
+  @include u.breakpoint("x-small") {
+    .newtech-img__container {
+      .img__wrapper {
+        padding-left: 15%;
+        img {
+          width: u.rem(200);
+          &:nth-child(2) {
+            top: u.rem(50);
+            left: calc(120px + 20vw);
+          }
+        }
+      }
+    }
+    .text__wrapper {
+      padding: u.rem(60);
+      .newtech__title {
+        h2 {
+          font-size: u.rem(24);
         }
       }
     }

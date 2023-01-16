@@ -1,6 +1,8 @@
 @use "functions" as func;
 $breakpoints-up: (
-  "small": func.rem(480),
+  "xx-small": func.rem(480),
+  "x-small": func.rem(680),
+  "small": func.rem(758),
   "medium": func.rem(1024),
   "large": func.rem(1200),
 );

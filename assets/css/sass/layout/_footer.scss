@@ -166,6 +166,13 @@
       gap: u.rem(40);
     }
   }
+  @include u.breakpoint("x-small") {
+    .info__wrapper {
+      padding: 0 u.rem(70);
+      grid-template-columns: 1fr;
+      gap: u.rem(40);
+    }
+  }
 }
 .copyright__container {
   height: u.rem(80);

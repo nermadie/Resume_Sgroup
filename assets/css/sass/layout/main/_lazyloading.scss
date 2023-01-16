@@ -342,4 +342,41 @@
       }
     }
   }
+  @include u.breakpoint("small") {
+    .blurbackground__section {
+      .background--behind {
+        height: u.rem(600);
+        .text__wrapper {
+          width: u.rem(500);
+          padding: 5%;
+          .title {
+            font-size: u.rem(45);
+            line-height: u.rem(54);
+          }
+          .text {
+            font-size: u.rem(18);
+            line-height: u.rem(29);
+          }
+        }
+      }
+    }
+  }
+  @include u.breakpoint("x-small") {
+    .blurbackground__section {
+      .background--behind {
+        height: u.rem(600);
+        .text__wrapper {
+          width: u.rem(500);
+          .title {
+            font-size: u.rem(32);
+            line-height: u.rem(54);
+          }
+          .text {
+            font-size: u.rem(18);
+            line-height: u.rem(29);
+          }
+        }
+      }
+    }
+  }
 }
