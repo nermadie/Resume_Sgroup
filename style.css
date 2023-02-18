@@ -1,0 +1,47 @@
+.form-container {
+  position: relative;
+  border: 1px solid gray;
+  height: 200px;
+  width: 500px;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  margin: 50px 0;
+}
+.form-container i {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  cursor: pointer;
+  color: white;
+  background-color: red;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form-container.hideform {
+  display: none;
+}
+textarea {
+  width: 450px;
+}
+.flashcard-container {
+  display: flex;
+  flex-wrap: wrap;
+  height: auto;
+}
+.flashcard-wrapper {
+  margin: 50px 0;
+  border: 1px solid gray;
+  padding: 10px;
+  width: 350px;
+}
+.flashcard-wrapper .hideanswer {
+  display: none;
+}
+.button-container {
+  display: flex;
+  justify-content: space-between;
+}
