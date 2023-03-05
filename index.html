@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task App</title>
+    <link rel="stylesheet" href="./assets/css/reset.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet" />
+  </head>
+  <body>
+    <!-- ADD NEW TASK FORM -->
+    <section class="newtask__container newtask--hidden">
+      <div class="newtask__form">
+        <button class="closeaddform__btn">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <h3>Add new todo</h3>
+        <input
+          type="text"
+          id="category__input"
+          placeholder="Category. Etc: Marketing..." /><br />
+        <input type="text" id="title__input" placeholder="Title" /><br />
+        <textarea id="content__input" placeholder="Content" rows="4"></textarea
+        ><br />
+        <div class="status__wrapper">
+          <div class="radio__wrapper">
+            <input
+              type="radio"
+              id="todo__radiobtn"
+              name="status"
+              value="Todo" />
+            <label for="todo__radiobtn">Todo</label>
+          </div>
+          <div class="radio__wrapper">
+            <input
+              type="radio"
+              id="doing__radiobtn"
+              name="status"
+              value="Doing" />
+            <label for="doing__radiobtn">Doing</label>
+          </div>
+          <div class="radio__wrapper">
+            <input
+              type="radio"
+              id="finished__radiobtn"
+              name="status"
+              value="Finished" />
+            <label for="finished__radiobtn">Finished</label>
+          </div>
+        </div>
+        <input id="submit__btn" type="button" value="Submit" />
+      </div>
+    </section>
+    <!-- END ADD NEW TASK FORM -->
+    <header>
+      <div class="header__container">
+        <div class="header__logo">
+          <img src="./assets/img/todo.png" alt="logo" />
+        </div>
+        <div class="header__add">
+          <button id="newtask__btn" class="btn btn--add">
+            <i class="fas fa-plus"></i>
+            <span>New Task</span>
+          </button>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="main__container">
+        <div class="todo__container category__container">
+          <div class="main__header todo__header">
+            <span class="header__title">Todo</span>
+            <span class="header__count todo__count">0</span>
+          </div>
+          <hr class="todo__hr" />
+          <!-- TASK -->
+          <div class="task__container">
+            <div class="task">
+              <div class="task__main">
+                <div class="task__header">
+                  <div class="task__category">
+                    <span class="task__category--text">Category</span>
+                  </div>
+                </div>
+                <div class="task__title">
+                  <p class="task__title--text">Title</p>
+                </div>
+                <hr class="task__hr" />
+                <div class="task__body">
+                  <div class="task__content">
+                    <p class="task__content--text">Content</p>
+                  </div>
+                  <div class="task__date">
+                    <i class="fa-regular fa-clock"></i>
+                    <span class="task__date--text">Date</span>
+                  </div>
+                </div>
+              </div>
+              <div class="task__action">
+                <div class="action__wrapper">
+                  <button class="btn btn--edit">
+                    <i class="fas fa-edit"></i>
+                  </button>
+                  <button class="btn btn--delete">
+                    <i class="fas fa-trash"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- END TASK -->
+        </div>
+        <div class="doing__container category__container">
+          <div class="main__header doing__header">
+            <span class="header__title doing__title">Doing</span>
+            <span class="header__count doing__count">0</span>
+          </div>
+          <hr class="doing__hr" />
+          <div class="task__container"></div>
+        </div>
+        <div class="finished__container category__container">
+          <div class="main__header finished__header">
+            <span class="header__title finished__title">Finished</span>
+            <span class="header__count finished__count">0</span>
+          </div>
+          <hr class="finished__hr" />
+          <div class="task__container"></div>
+        </div>
+      </div>
+    </main>
+  </body>
+  <!-- SCRIPT -->
+  <script src="./assets/js/index.js"></script>
+</html>
